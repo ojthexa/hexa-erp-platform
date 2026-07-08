@@ -2,7 +2,7 @@ import {
   GraduationCap,
   Building2,
   UtensilsCrossed,
-  Mountain,
+  Factory as FactoryIcon,
   Stethoscope,
   Warehouse,
   LayoutDashboard,
@@ -56,10 +56,12 @@ export type MenuItem = { label: string; icon: LucideIcon };
 export type MenuGroup = { label: string; items: MenuItem[] };
 
 export type IndustryId =
-  | "school"
+  | "school-hr"
+  | "school-academic"
+  | "tahfidz"
   | "office"
   | "restaurant"
-  | "mining"
+  | "manufacture"
   | "clinic"
   | "warehouse";
 
@@ -68,7 +70,15 @@ export type IndustryConfig = {
   name: string;
   tagline: string;
   description: string;
-  route: "/school" | "/office" | "/restaurant" | "/mining" | "/clinic" | "/warehouse";
+  route:
+    | "/school-hr"
+    | "/school-academic"
+    | "/tahfidz"
+    | "/office"
+    | "/restaurant"
+    | "/manufacture"
+    | "/clinic"
+    | "/warehouse";
   icon: LucideIcon;
   brandVar: string; // css var name
   gradient: string; // tailwind gradient classes for card accent
@@ -77,34 +87,65 @@ export type IndustryConfig = {
 
 export const industries: IndustryConfig[] = [
   {
-    id: "school",
-    name: "School ERP",
-    tagline: "Academic Operations",
+    id: "school-hr",
+    name: "School Management Karyawan",
+    tagline: "School HR & Staff",
     description:
-      "Academic management, Tahfidz, teachers, students and finance in one place.",
-    route: "/school",
-    icon: GraduationCap,
-    brandVar: "--brand-school",
-    gradient: "from-indigo-500/15 to-blue-500/5",
+      "Kelola karyawan sekolah — guru, staf, absensi, cuti, payroll dan rekrutmen.",
+    route: "/school-hr",
+    icon: BriefcaseBusiness,
+    brandVar: "--brand-school-hr",
+    gradient: "from-violet-500/15 to-indigo-500/5",
     menu: [
-      {
-        label: "Overview",
-        items: [{ label: "Dashboard", icon: LayoutDashboard }],
-      },
+      { label: "Overview", items: [{ label: "Dashboard", icon: LayoutDashboard }] },
       {
         label: "People",
         items: [
-          { label: "Students", icon: Users },
           { label: "Teachers", icon: UserCog },
+          { label: "Staff", icon: Users },
           { label: "Employees", icon: BriefcaseBusiness },
-          { label: "Attendance", icon: ClipboardCheck },
+          { label: "Recruitment", icon: UserPlus },
         ],
       },
       {
-        label: "Islamic Studies",
+        label: "Time & Pay",
         items: [
-          { label: "Tahfidz", icon: BookOpen },
-          { label: "Tilawah", icon: Mic2 },
+          { label: "Attendance", icon: ClipboardCheck },
+          { label: "Leave", icon: CalendarClock },
+          { label: "Payroll", icon: Banknote },
+          { label: "Contracts", icon: FileText },
+        ],
+      },
+      {
+        label: "Admin",
+        items: [
+          { label: "Assets", icon: Package },
+          { label: "Letters", icon: Mail },
+          { label: "Finance", icon: Wallet },
+          { label: "Reports", icon: PieChart },
+          { label: "Settings", icon: Settings },
+        ],
+      },
+    ],
+  },
+  {
+    id: "school-academic",
+    name: "School Academic Information",
+    tagline: "Academic Operations",
+    description:
+      "Sistem akademik — siswa, kelas, jadwal, ujian, nilai dan rapor.",
+    route: "/school-academic",
+    icon: GraduationCap,
+    brandVar: "--brand-school-academic",
+    gradient: "from-indigo-500/15 to-blue-500/5",
+    menu: [
+      { label: "Overview", items: [{ label: "Dashboard", icon: LayoutDashboard }] },
+      {
+        label: "Students",
+        items: [
+          { label: "Students", icon: Users },
+          { label: "Admissions", icon: UserPlus },
+          { label: "Attendance", icon: ClipboardCheck },
         ],
       },
       {
@@ -112,6 +153,7 @@ export const industries: IndustryConfig[] = [
         items: [
           { label: "Class", icon: School },
           { label: "Schedule", icon: CalendarDays },
+          { label: "Subjects", icon: BookMarked },
           { label: "Examination", icon: FileCheck2 },
           { label: "Report Card", icon: Award },
         ],
@@ -120,9 +162,55 @@ export const industries: IndustryConfig[] = [
         label: "Operations",
         items: [
           { label: "Finance", icon: Wallet },
-          { label: "Payroll", icon: Banknote },
-          { label: "Inventory", icon: Boxes },
           { label: "Documents", icon: FileText },
+          { label: "Reports", icon: PieChart },
+          { label: "Settings", icon: Settings },
+        ],
+      },
+    ],
+  },
+  {
+    id: "tahfidz",
+    name: "Tahfidz Management",
+    tagline: "Islamic Studies",
+    description:
+      "Manajemen hafalan Al-Qur'an — santri, halaqoh, murojaah, tilawah dan ustadz.",
+    route: "/tahfidz",
+    icon: BookOpen,
+    brandVar: "--brand-tahfidz",
+    gradient: "from-emerald-500/15 to-teal-500/5",
+    menu: [
+      { label: "Overview", items: [{ label: "Dashboard", icon: LayoutDashboard }] },
+      {
+        label: "Santri",
+        items: [
+          { label: "Santri", icon: Users },
+          { label: "Halaqoh", icon: School },
+          { label: "Attendance", icon: ClipboardCheck },
+        ],
+      },
+      {
+        label: "Hafalan",
+        items: [
+          { label: "Tahfidz", icon: BookOpen },
+          { label: "Murojaah", icon: BookMarked },
+          { label: "Tilawah", icon: Mic2 },
+          { label: "Ujian Hafalan", icon: FileCheck2 },
+          { label: "Sertifikat", icon: Award },
+        ],
+      },
+      {
+        label: "Ustadz",
+        items: [
+          { label: "Ustadz", icon: UserCog },
+          { label: "Schedule", icon: CalendarDays },
+          { label: "Laporan", icon: FileText },
+        ],
+      },
+      {
+        label: "Admin",
+        items: [
+          { label: "Reports", icon: PieChart },
           { label: "Settings", icon: Settings },
         ],
       },
@@ -222,32 +310,33 @@ export const industries: IndustryConfig[] = [
     ],
   },
   {
-    id: "mining",
-    name: "Mining ERP",
-    tagline: "Fleet & Production",
+    id: "manufacture",
+    name: "Manufacture ERP",
+    tagline: "Production & Plant",
     description:
-      "Fleet management, production, maintenance and logistics for mining ops.",
-    route: "/mining",
-    icon: Mountain,
-    brandVar: "--brand-mining",
+      "Manajemen produksi, mesin, quality control, maintenance dan logistik pabrik.",
+    route: "/manufacture",
+    icon: FactoryIcon,
+    brandVar: "--brand-manufacture",
     gradient: "from-amber-500/15 to-yellow-500/5",
     menu: [
       { label: "Overview", items: [{ label: "Dashboard", icon: LayoutDashboard }] },
       {
-        label: "Operations",
+        label: "Production",
         items: [
           { label: "Production", icon: Factory },
-          { label: "Fleet", icon: Car },
-          { label: "Equipment", icon: Wrench },
+          { label: "Work Orders", icon: FolderKanban },
+          { label: "BOM", icon: BookMarked },
+          { label: "Machines", icon: Wrench },
+          { label: "Quality Control", icon: ShieldCheck },
           { label: "Maintenance", icon: Wrench },
-          { label: "Fuel", icon: Fuel },
-          { label: "Drivers", icon: IdCard },
         ],
       },
       {
         label: "People",
         items: [
           { label: "Employees", icon: Users },
+          { label: "Operators", icon: IdCard },
           { label: "Attendance", icon: ClipboardCheck },
           { label: "Payroll", icon: Banknote },
         ],
@@ -257,9 +346,11 @@ export const industries: IndustryConfig[] = [
         items: [
           { label: "Warehouse", icon: Warehouse },
           { label: "Inventory", icon: Boxes },
+          { label: "Raw Materials", icon: Package },
           { label: "Purchasing", icon: ShoppingCart },
           { label: "Logistics", icon: RouteIcon },
-          { label: "Safety", icon: ShieldCheck },
+          { label: "Energy & Fuel", icon: Fuel },
+          { label: "Fleet", icon: Car },
         ],
       },
       {
