@@ -10,14 +10,33 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WarehouseRouteImport } from './routes/warehouse'
+import { Route as TahfidzRouteImport } from './routes/tahfidz'
+import { Route as SchoolHrRouteImport } from './routes/school-hr'
+import { Route as SchoolAcademicRouteImport } from './routes/school-academic'
 import { Route as RestaurantRouteImport } from './routes/restaurant'
 import { Route as OfficeRouteImport } from './routes/office'
+import { Route as ManufactureRouteImport } from './routes/manufacture'
 import { Route as ClinicRouteImport } from './routes/clinic'
 import { Route as IndexRouteImport } from './routes/index'
 
 const WarehouseRoute = WarehouseRouteImport.update({
   id: '/warehouse',
   path: '/warehouse',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TahfidzRoute = TahfidzRouteImport.update({
+  id: '/tahfidz',
+  path: '/tahfidz',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SchoolHrRoute = SchoolHrRouteImport.update({
+  id: '/school-hr',
+  path: '/school-hr',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SchoolAcademicRoute = SchoolAcademicRouteImport.update({
+  id: '/school-academic',
+  path: '/school-academic',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RestaurantRoute = RestaurantRouteImport.update({
@@ -28,6 +47,11 @@ const RestaurantRoute = RestaurantRouteImport.update({
 const OfficeRoute = OfficeRouteImport.update({
   id: '/office',
   path: '/office',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ManufactureRoute = ManufactureRouteImport.update({
+  id: '/manufacture',
+  path: '/manufacture',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ClinicRoute = ClinicRouteImport.update({
@@ -44,38 +68,82 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/clinic': typeof ClinicRoute
+  '/manufacture': typeof ManufactureRoute
   '/office': typeof OfficeRoute
   '/restaurant': typeof RestaurantRoute
+  '/school-academic': typeof SchoolAcademicRoute
+  '/school-hr': typeof SchoolHrRoute
+  '/tahfidz': typeof TahfidzRoute
   '/warehouse': typeof WarehouseRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/clinic': typeof ClinicRoute
+  '/manufacture': typeof ManufactureRoute
   '/office': typeof OfficeRoute
   '/restaurant': typeof RestaurantRoute
+  '/school-academic': typeof SchoolAcademicRoute
+  '/school-hr': typeof SchoolHrRoute
+  '/tahfidz': typeof TahfidzRoute
   '/warehouse': typeof WarehouseRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/clinic': typeof ClinicRoute
+  '/manufacture': typeof ManufactureRoute
   '/office': typeof OfficeRoute
   '/restaurant': typeof RestaurantRoute
+  '/school-academic': typeof SchoolAcademicRoute
+  '/school-hr': typeof SchoolHrRoute
+  '/tahfidz': typeof TahfidzRoute
   '/warehouse': typeof WarehouseRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/clinic' | '/office' | '/restaurant' | '/warehouse'
+  fullPaths:
+    | '/'
+    | '/clinic'
+    | '/manufacture'
+    | '/office'
+    | '/restaurant'
+    | '/school-academic'
+    | '/school-hr'
+    | '/tahfidz'
+    | '/warehouse'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/clinic' | '/office' | '/restaurant' | '/warehouse'
-  id: '__root__' | '/' | '/clinic' | '/office' | '/restaurant' | '/warehouse'
+  to:
+    | '/'
+    | '/clinic'
+    | '/manufacture'
+    | '/office'
+    | '/restaurant'
+    | '/school-academic'
+    | '/school-hr'
+    | '/tahfidz'
+    | '/warehouse'
+  id:
+    | '__root__'
+    | '/'
+    | '/clinic'
+    | '/manufacture'
+    | '/office'
+    | '/restaurant'
+    | '/school-academic'
+    | '/school-hr'
+    | '/tahfidz'
+    | '/warehouse'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ClinicRoute: typeof ClinicRoute
+  ManufactureRoute: typeof ManufactureRoute
   OfficeRoute: typeof OfficeRoute
   RestaurantRoute: typeof RestaurantRoute
+  SchoolAcademicRoute: typeof SchoolAcademicRoute
+  SchoolHrRoute: typeof SchoolHrRoute
+  TahfidzRoute: typeof TahfidzRoute
   WarehouseRoute: typeof WarehouseRoute
 }
 
@@ -86,6 +154,27 @@ declare module '@tanstack/react-router' {
       path: '/warehouse'
       fullPath: '/warehouse'
       preLoaderRoute: typeof WarehouseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tahfidz': {
+      id: '/tahfidz'
+      path: '/tahfidz'
+      fullPath: '/tahfidz'
+      preLoaderRoute: typeof TahfidzRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/school-hr': {
+      id: '/school-hr'
+      path: '/school-hr'
+      fullPath: '/school-hr'
+      preLoaderRoute: typeof SchoolHrRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/school-academic': {
+      id: '/school-academic'
+      path: '/school-academic'
+      fullPath: '/school-academic'
+      preLoaderRoute: typeof SchoolAcademicRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/restaurant': {
@@ -100,6 +189,13 @@ declare module '@tanstack/react-router' {
       path: '/office'
       fullPath: '/office'
       preLoaderRoute: typeof OfficeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/manufacture': {
+      id: '/manufacture'
+      path: '/manufacture'
+      fullPath: '/manufacture'
+      preLoaderRoute: typeof ManufactureRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/clinic': {
@@ -122,8 +218,12 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ClinicRoute: ClinicRoute,
+  ManufactureRoute: ManufactureRoute,
   OfficeRoute: OfficeRoute,
   RestaurantRoute: RestaurantRoute,
+  SchoolAcademicRoute: SchoolAcademicRoute,
+  SchoolHrRoute: SchoolHrRoute,
+  TahfidzRoute: TahfidzRoute,
   WarehouseRoute: WarehouseRoute,
 }
 export const routeTree = rootRouteImport
