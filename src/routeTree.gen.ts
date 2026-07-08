@@ -10,10 +10,12 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WarehouseRouteImport } from './routes/warehouse'
-import { Route as SchoolRouteImport } from './routes/school'
+import { Route as TahfidzRouteImport } from './routes/tahfidz'
+import { Route as SchoolHrRouteImport } from './routes/school-hr'
+import { Route as SchoolAcademicRouteImport } from './routes/school-academic'
 import { Route as RestaurantRouteImport } from './routes/restaurant'
 import { Route as OfficeRouteImport } from './routes/office'
-import { Route as MiningRouteImport } from './routes/mining'
+import { Route as ManufactureRouteImport } from './routes/manufacture'
 import { Route as ClinicRouteImport } from './routes/clinic'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -22,9 +24,19 @@ const WarehouseRoute = WarehouseRouteImport.update({
   path: '/warehouse',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SchoolRoute = SchoolRouteImport.update({
-  id: '/school',
-  path: '/school',
+const TahfidzRoute = TahfidzRouteImport.update({
+  id: '/tahfidz',
+  path: '/tahfidz',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SchoolHrRoute = SchoolHrRouteImport.update({
+  id: '/school-hr',
+  path: '/school-hr',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SchoolAcademicRoute = SchoolAcademicRouteImport.update({
+  id: '/school-academic',
+  path: '/school-academic',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RestaurantRoute = RestaurantRouteImport.update({
@@ -37,9 +49,9 @@ const OfficeRoute = OfficeRouteImport.update({
   path: '/office',
   getParentRoute: () => rootRouteImport,
 } as any)
-const MiningRoute = MiningRouteImport.update({
-  id: '/mining',
-  path: '/mining',
+const ManufactureRoute = ManufactureRouteImport.update({
+  id: '/manufacture',
+  path: '/manufacture',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ClinicRoute = ClinicRouteImport.update({
@@ -56,29 +68,35 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/clinic': typeof ClinicRoute
-  '/mining': typeof MiningRoute
+  '/manufacture': typeof ManufactureRoute
   '/office': typeof OfficeRoute
   '/restaurant': typeof RestaurantRoute
-  '/school': typeof SchoolRoute
+  '/school-academic': typeof SchoolAcademicRoute
+  '/school-hr': typeof SchoolHrRoute
+  '/tahfidz': typeof TahfidzRoute
   '/warehouse': typeof WarehouseRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/clinic': typeof ClinicRoute
-  '/mining': typeof MiningRoute
+  '/manufacture': typeof ManufactureRoute
   '/office': typeof OfficeRoute
   '/restaurant': typeof RestaurantRoute
-  '/school': typeof SchoolRoute
+  '/school-academic': typeof SchoolAcademicRoute
+  '/school-hr': typeof SchoolHrRoute
+  '/tahfidz': typeof TahfidzRoute
   '/warehouse': typeof WarehouseRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/clinic': typeof ClinicRoute
-  '/mining': typeof MiningRoute
+  '/manufacture': typeof ManufactureRoute
   '/office': typeof OfficeRoute
   '/restaurant': typeof RestaurantRoute
-  '/school': typeof SchoolRoute
+  '/school-academic': typeof SchoolAcademicRoute
+  '/school-hr': typeof SchoolHrRoute
+  '/tahfidz': typeof TahfidzRoute
   '/warehouse': typeof WarehouseRoute
 }
 export interface FileRouteTypes {
@@ -86,38 +104,46 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/clinic'
-    | '/mining'
+    | '/manufacture'
     | '/office'
     | '/restaurant'
-    | '/school'
+    | '/school-academic'
+    | '/school-hr'
+    | '/tahfidz'
     | '/warehouse'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/clinic'
-    | '/mining'
+    | '/manufacture'
     | '/office'
     | '/restaurant'
-    | '/school'
+    | '/school-academic'
+    | '/school-hr'
+    | '/tahfidz'
     | '/warehouse'
   id:
     | '__root__'
     | '/'
     | '/clinic'
-    | '/mining'
+    | '/manufacture'
     | '/office'
     | '/restaurant'
-    | '/school'
+    | '/school-academic'
+    | '/school-hr'
+    | '/tahfidz'
     | '/warehouse'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ClinicRoute: typeof ClinicRoute
-  MiningRoute: typeof MiningRoute
+  ManufactureRoute: typeof ManufactureRoute
   OfficeRoute: typeof OfficeRoute
   RestaurantRoute: typeof RestaurantRoute
-  SchoolRoute: typeof SchoolRoute
+  SchoolAcademicRoute: typeof SchoolAcademicRoute
+  SchoolHrRoute: typeof SchoolHrRoute
+  TahfidzRoute: typeof TahfidzRoute
   WarehouseRoute: typeof WarehouseRoute
 }
 
@@ -130,11 +156,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WarehouseRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/school': {
-      id: '/school'
-      path: '/school'
-      fullPath: '/school'
-      preLoaderRoute: typeof SchoolRouteImport
+    '/tahfidz': {
+      id: '/tahfidz'
+      path: '/tahfidz'
+      fullPath: '/tahfidz'
+      preLoaderRoute: typeof TahfidzRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/school-hr': {
+      id: '/school-hr'
+      path: '/school-hr'
+      fullPath: '/school-hr'
+      preLoaderRoute: typeof SchoolHrRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/school-academic': {
+      id: '/school-academic'
+      path: '/school-academic'
+      fullPath: '/school-academic'
+      preLoaderRoute: typeof SchoolAcademicRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/restaurant': {
@@ -151,11 +191,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OfficeRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/mining': {
-      id: '/mining'
-      path: '/mining'
-      fullPath: '/mining'
-      preLoaderRoute: typeof MiningRouteImport
+    '/manufacture': {
+      id: '/manufacture'
+      path: '/manufacture'
+      fullPath: '/manufacture'
+      preLoaderRoute: typeof ManufactureRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/clinic': {
@@ -178,22 +218,14 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ClinicRoute: ClinicRoute,
-  MiningRoute: MiningRoute,
+  ManufactureRoute: ManufactureRoute,
   OfficeRoute: OfficeRoute,
   RestaurantRoute: RestaurantRoute,
-  SchoolRoute: SchoolRoute,
+  SchoolAcademicRoute: SchoolAcademicRoute,
+  SchoolHrRoute: SchoolHrRoute,
+  TahfidzRoute: TahfidzRoute,
   WarehouseRoute: WarehouseRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
