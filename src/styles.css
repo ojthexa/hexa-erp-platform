@@ -101,10 +101,12 @@
   --chart-5: oklch(0.65 0.2 20);
   --shadow-card: 0 1px 2px oklch(0.22 0.04 258 / 0.04), 0 8px 24px -12px oklch(0.22 0.04 258 / 0.08);
   --shadow-hover: 0 4px 8px oklch(0.22 0.04 258 / 0.06), 0 20px 40px -20px oklch(0.22 0.04 258 / 0.18);
-  --brand-school: oklch(0.55 0.18 258);
+  --brand-school-hr: oklch(0.55 0.15 280);
+  --brand-school-academic: oklch(0.55 0.18 258);
+  --brand-tahfidz: oklch(0.55 0.15 155);
   --brand-office: oklch(0.55 0.15 220);
   --brand-restaurant: oklch(0.62 0.19 30);
-  --brand-mining: oklch(0.55 0.14 60);
+  --brand-manufacture: oklch(0.55 0.14 60);
   --brand-clinic: oklch(0.6 0.15 175);
   --brand-warehouse: oklch(0.55 0.16 285);
   --sidebar: oklch(1 0 0);

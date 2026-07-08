@@ -10,21 +10,14 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WarehouseRouteImport } from './routes/warehouse'
-import { Route as SchoolRouteImport } from './routes/school'
 import { Route as RestaurantRouteImport } from './routes/restaurant'
 import { Route as OfficeRouteImport } from './routes/office'
-import { Route as MiningRouteImport } from './routes/mining'
 import { Route as ClinicRouteImport } from './routes/clinic'
 import { Route as IndexRouteImport } from './routes/index'
 
 const WarehouseRoute = WarehouseRouteImport.update({
   id: '/warehouse',
   path: '/warehouse',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SchoolRoute = SchoolRouteImport.update({
-  id: '/school',
-  path: '/school',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RestaurantRoute = RestaurantRouteImport.update({
@@ -35,11 +28,6 @@ const RestaurantRoute = RestaurantRouteImport.update({
 const OfficeRoute = OfficeRouteImport.update({
   id: '/office',
   path: '/office',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MiningRoute = MiningRouteImport.update({
-  id: '/mining',
-  path: '/mining',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ClinicRoute = ClinicRouteImport.update({
@@ -56,68 +44,38 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/clinic': typeof ClinicRoute
-  '/mining': typeof MiningRoute
   '/office': typeof OfficeRoute
   '/restaurant': typeof RestaurantRoute
-  '/school': typeof SchoolRoute
   '/warehouse': typeof WarehouseRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/clinic': typeof ClinicRoute
-  '/mining': typeof MiningRoute
   '/office': typeof OfficeRoute
   '/restaurant': typeof RestaurantRoute
-  '/school': typeof SchoolRoute
   '/warehouse': typeof WarehouseRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/clinic': typeof ClinicRoute
-  '/mining': typeof MiningRoute
   '/office': typeof OfficeRoute
   '/restaurant': typeof RestaurantRoute
-  '/school': typeof SchoolRoute
   '/warehouse': typeof WarehouseRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/clinic'
-    | '/mining'
-    | '/office'
-    | '/restaurant'
-    | '/school'
-    | '/warehouse'
+  fullPaths: '/' | '/clinic' | '/office' | '/restaurant' | '/warehouse'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/clinic'
-    | '/mining'
-    | '/office'
-    | '/restaurant'
-    | '/school'
-    | '/warehouse'
-  id:
-    | '__root__'
-    | '/'
-    | '/clinic'
-    | '/mining'
-    | '/office'
-    | '/restaurant'
-    | '/school'
-    | '/warehouse'
+  to: '/' | '/clinic' | '/office' | '/restaurant' | '/warehouse'
+  id: '__root__' | '/' | '/clinic' | '/office' | '/restaurant' | '/warehouse'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ClinicRoute: typeof ClinicRoute
-  MiningRoute: typeof MiningRoute
   OfficeRoute: typeof OfficeRoute
   RestaurantRoute: typeof RestaurantRoute
-  SchoolRoute: typeof SchoolRoute
   WarehouseRoute: typeof WarehouseRoute
 }
 
@@ -128,13 +86,6 @@ declare module '@tanstack/react-router' {
       path: '/warehouse'
       fullPath: '/warehouse'
       preLoaderRoute: typeof WarehouseRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/school': {
-      id: '/school'
-      path: '/school'
-      fullPath: '/school'
-      preLoaderRoute: typeof SchoolRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/restaurant': {
@@ -149,13 +100,6 @@ declare module '@tanstack/react-router' {
       path: '/office'
       fullPath: '/office'
       preLoaderRoute: typeof OfficeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/mining': {
-      id: '/mining'
-      path: '/mining'
-      fullPath: '/mining'
-      preLoaderRoute: typeof MiningRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/clinic': {
@@ -178,22 +122,10 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ClinicRoute: ClinicRoute,
-  MiningRoute: MiningRoute,
   OfficeRoute: OfficeRoute,
   RestaurantRoute: RestaurantRoute,
-  SchoolRoute: SchoolRoute,
   WarehouseRoute: WarehouseRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
