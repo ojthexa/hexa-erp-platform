@@ -18,7 +18,7 @@ export function AppSidebar({ industry }: { industry: IndustryConfig }) {
   const { state } = useSidebar();
   const collapsed = state === "collapsed";
   const pathname = useRouterState({ select: (r) => r.location.pathname });
-  const Icon = industry.icon;
+  void industry.icon;
 
   return (
     <Sidebar collapsible="icon" className="border-r">
@@ -47,6 +47,7 @@ export function AppSidebar({ industry }: { industry: IndustryConfig }) {
                 {group.items.map((item) => {
                   const active = item.label === "Dashboard" && pathname === industry.route;
                   const ItemIcon = item.icon;
+                  const isDashboard = item.label === "Dashboard";
                   return (
                     <SidebarMenuItem key={item.label}>
                       <SidebarMenuButton
@@ -54,13 +55,21 @@ export function AppSidebar({ industry }: { industry: IndustryConfig }) {
                         isActive={active}
                         tooltip={item.label}
                       >
-                        <Link
-                          to={industry.route}
-                          className="flex items-center gap-2"
-                        >
-                          <ItemIcon className="h-4 w-4 shrink-0" />
-                          {!collapsed && <span className="truncate">{item.label}</span>}
-                        </Link>
+                        {isDashboard ? (
+                          <Link to={industry.route} className="flex items-center gap-2">
+                            <ItemIcon className="h-4 w-4 shrink-0" />
+                            {!collapsed && <span className="truncate">{item.label}</span>}
+                          </Link>
+                        ) : (
+                          <Link
+                            to="/login/$industryId"
+                            params={{ industryId: industry.id }}
+                            className="flex items-center gap-2"
+                          >
+                            <ItemIcon className="h-4 w-4 shrink-0" />
+                            {!collapsed && <span className="truncate">{item.label}</span>}
+                          </Link>
+                        )}
                       </SidebarMenuButton>
                     </SidebarMenuItem>
                   );
@@ -73,10 +82,10 @@ export function AppSidebar({ industry }: { industry: IndustryConfig }) {
           <SidebarGroupContent>
             <SidebarMenu>
               <SidebarMenuItem>
-                <SidebarMenuButton asChild tooltip="Back to industries">
+                <SidebarMenuButton asChild tooltip="Kembali ke daftar industri">
                   <Link to="/" className="flex items-center gap-2 text-muted-foreground">
                     <ArrowLeft className="h-4 w-4 shrink-0" />
-                    {!collapsed && <span>Switch industry</span>}
+                    {!collapsed && <span>Ganti industri</span>}
                   </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>

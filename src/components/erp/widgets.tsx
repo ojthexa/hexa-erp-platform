@@ -136,7 +136,7 @@ export function QuickActions({
   actions: { label: string; icon: LucideIcon }[];
 }) {
   return (
-    <SectionCard title="Quick Actions">
+    <SectionCard title="Aksi Cepat">
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
         {actions.map((a) => {
           const Icon = a.icon;
@@ -175,7 +175,7 @@ export function TaskList({
     high: "bg-destructive/10 text-destructive",
   } as const;
   return (
-    <SectionCard title="Task List">
+    <SectionCard title="Daftar Tugas">
       <ul className="flex flex-col gap-2">
         {tasks.map((t, i) => (
           <li
@@ -188,7 +188,7 @@ export function TaskList({
             />
             <div className="min-w-0 flex-1">
               <div className="truncate text-sm font-medium">{t.title}</div>
-              <div className="text-[11px] text-muted-foreground">Due {t.due}</div>
+              <div className="text-[11px] text-muted-foreground">Tenggat {t.due}</div>
             </div>
             <span className={cn("rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase", badge[t.priority])}>
               {t.priority}
@@ -206,7 +206,7 @@ export function Announcements({
   items: { title: string; body: string; tag: string }[];
 }) {
   return (
-    <SectionCard title="Announcements">
+    <SectionCard title="Pengumuman">
       <div className="flex flex-col gap-3">
         {items.map((a, i) => (
           <div key={i} className="rounded-xl border bg-secondary/40 p-3">

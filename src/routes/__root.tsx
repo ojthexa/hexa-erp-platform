@@ -17,16 +17,16 @@ function NotFoundComponent() {
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
+        <h2 className="mt-4 text-xl font-semibold text-foreground">Halaman tidak ditemukan</h2>
         <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
+          Halaman yang Anda cari tidak ada atau telah dipindahkan.
         </p>
         <div className="mt-6">
           <Link
             to="/"
             className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
-            Go home
+            Kembali ke beranda
           </Link>
         </div>
       </div>
@@ -77,11 +77,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "HEXA ERP — Multi-Industry Business Platform" },
-      { name: "description", content: "One platform, every industry. HEXA ERP delivers modern dashboards for schools, offices, restaurants, mining, clinics and warehouses." },
+      { title: "HEXA ERP — Platform Bisnis Multi-Industri" },
+      { name: "description", content: "Satu platform, semua industri. HEXA ERP menyediakan dashboard modern untuk sekolah, kantor, restoran, manufaktur, klinik, gudang, proyek dan yayasan." },
       { name: "author", content: "HEXA ERP" },
-      { property: "og:title", content: "HEXA ERP — Multi-Industry Business Platform" },
-      { property: "og:description", content: "Choose your industry and run your business with a clean, modern ERP built for teams." },
+      { property: "og:title", content: "HEXA ERP — Platform Bisnis Multi-Industri" },
+      { property: "og:description", content: "Pilih industri Anda dan kelola bisnis dengan ERP modern yang bersih untuk tim." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

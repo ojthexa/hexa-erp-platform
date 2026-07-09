@@ -109,6 +109,8 @@
   --brand-manufacture: oklch(0.55 0.14 60);
   --brand-clinic: oklch(0.6 0.15 175);
   --brand-warehouse: oklch(0.55 0.16 285);
+  --brand-project: oklch(0.58 0.16 210);
+  --brand-yayasan: oklch(0.58 0.15 25);
   --sidebar: oklch(1 0 0);
   --sidebar-foreground: oklch(0.3 0.04 258);
   --sidebar-primary: oklch(0.52 0.19 258);

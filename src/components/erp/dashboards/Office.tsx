@@ -27,43 +27,43 @@ export function OfficeDashboard() {
   return (
     <div className="grid grid-cols-1 gap-4 lg:grid-cols-12">
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:col-span-12 xl:grid-cols-4">
-        <KpiCard label="Employees" value="248" delta="+6" icon={Users} hint="active" />
-        <KpiCard label="Attendance Today" value="231" delta="93%" icon={ClipboardCheck} />
+        <KpiCard label="Karyawan" value="248" delta="+6" icon={Users} hint="aktif" />
+        <KpiCard label="Hadir Hari Ini" value="231" delta="93%" icon={ClipboardCheck} />
         <KpiCard label="Payroll (Jul)" value="IDR 390M" delta="+3.1%" icon={Banknote} />
-        <KpiCard label="Pending Leave" value="14" trend="down" delta="-3" icon={CalendarClock} />
+        <KpiCard label="Cuti Pending" value="14" trend="down" delta="-3" icon={CalendarClock} />
       </div>
 
-      <SectionCard title="Payroll Summary" className="lg:col-span-8">
+      <SectionCard title="Ringkasan Payroll" className="lg:col-span-8">
         <BarSeries data={payroll} dataKey="value" />
       </SectionCard>
 
-      <SectionCard title="Office Assets" className="lg:col-span-4">
+      <SectionCard title="Aset Kantor" className="lg:col-span-4">
         <div className="flex flex-col gap-4">
-          <ProgressRow label="Laptops" value={87} meta="87 / 100" />
-          <ProgressRow label="Monitors" value={64} meta="64 / 90" />
-          <ProgressRow label="Meeting Rooms" value={42} meta="42% used" />
-          <ProgressRow label="Vehicles" value={71} meta="5 / 7 in use" />
+          <ProgressRow label="Laptop" value={87} meta="87 / 100" />
+          <ProgressRow label="Monitor" value={64} meta="64 / 90" />
+          <ProgressRow label="Ruang Rapat" value={42} meta="42% terpakai" />
+          <ProgressRow label="Kendaraan" value={71} meta="5 / 7 digunakan" />
         </div>
       </SectionCard>
 
-      <SectionCard title="Projects" className="lg:col-span-6">
+      <SectionCard title="Proyek" className="lg:col-span-6">
         <ActivityList
           items={[
-            { title: "ERP rollout — Phase 2", meta: "12 members · 72% done", time: "on track", icon: FolderKanban },
-            { title: "Office renovation", meta: "3 vendors · 45% done", time: "risk", icon: Package },
-            { title: "Employee onboarding revamp", meta: "HR team · 88% done", time: "on track", icon: CheckCircle2 },
-            { title: "Q3 OKR planning", meta: "Leadership · 30% done", time: "planning", icon: FolderKanban },
+            { title: "Rollout ERP — Fase 2", meta: "12 anggota · 72% selesai", time: "on track", icon: FolderKanban },
+            { title: "Renovasi Kantor", meta: "3 vendor · 45% selesai", time: "risiko", icon: Package },
+            { title: "Revamp Onboarding Karyawan", meta: "Tim HR · 88% selesai", time: "on track", icon: CheckCircle2 },
+            { title: "Perencanaan OKR Q3", meta: "Leadership · 30% selesai", time: "planning", icon: FolderKanban },
           ]}
         />
       </SectionCard>
 
-      <SectionCard title="Tasks" className="lg:col-span-6">
+      <SectionCard title="Tugas" className="lg:col-span-6">
         <ActivityList
           items={[
-            { title: "Approve reimbursements", meta: "Finance · 8 requests", time: "today", icon: CheckCircle2 },
-            { title: "Interview 3 candidates", meta: "HR · Frontend role", time: "today", icon: UserPlus },
-            { title: "Send monthly memo", meta: "Comms · all-hands", time: "tomorrow", icon: Mail },
-            { title: "Review vendor contracts", meta: "Legal · 4 vendors", time: "Fri", icon: CheckCircle2 },
+            { title: "Approve reimbursement", meta: "Keuangan · 8 pengajuan", time: "hari ini", icon: CheckCircle2 },
+            { title: "Interview 3 kandidat", meta: "HR · role Frontend", time: "hari ini", icon: UserPlus },
+            { title: "Kirim memo bulanan", meta: "Komunikasi · all-hands", time: "besok", icon: Mail },
+            { title: "Review kontrak vendor", meta: "Legal · 4 vendor", time: "Jum", icon: CheckCircle2 },
           ]}
         />
       </SectionCard>
@@ -71,12 +71,12 @@ export function OfficeDashboard() {
       <div className="lg:col-span-4">
         <QuickActions
           actions={[
-            { label: "Add Employee", icon: UserPlus },
-            { label: "Run Payroll", icon: Banknote },
-            { label: "New Project", icon: FolderKanban },
-            { label: "Create Letter", icon: Mail },
-            { label: "Announcement", icon: Megaphone },
-            { label: "New Task", icon: Plus },
+            { label: "Tambah Karyawan", icon: UserPlus },
+            { label: "Jalankan Payroll", icon: Banknote },
+            { label: "Proyek Baru", icon: FolderKanban },
+            { label: "Buat Surat", icon: Mail },
+            { label: "Pengumuman", icon: Megaphone },
+            { label: "Tugas Baru", icon: Plus },
           ]}
         />
       </div>
@@ -84,17 +84,17 @@ export function OfficeDashboard() {
       <div className="lg:col-span-4">
         <TaskList
           tasks={[
-            { title: "Approve July payroll", due: "today", priority: "high" },
-            { title: "Publish leave policy update", due: "Wed", priority: "med" },
-            { title: "Book conference tickets", due: "Fri", priority: "low" },
+            { title: "Approve payroll Juli", due: "hari ini", priority: "high" },
+            { title: "Publikasi update kebijakan cuti", due: "Rab", priority: "med" },
+            { title: "Booking tiket konferensi", due: "Jum", priority: "low" },
           ]}
         />
       </div>
       <div className="lg:col-span-12">
         <Announcements
           items={[
-            { tag: "Company", title: "All-hands town hall this Friday", body: "Q2 review + roadmap by the CEO. 15:00 in the main auditorium." },
-            { tag: "HR", title: "Health insurance renewal", body: "Please review your dependents by end of month." },
+            { tag: "Perusahaan", title: "Town hall all-hands Jumat ini", body: "Review Q2 + roadmap oleh CEO. 15:00 di auditorium utama." },
+            { tag: "HR", title: "Perpanjangan asuransi kesehatan", body: "Mohon review data tanggungan sebelum akhir bulan." },
           ]}
         />
       </div>
