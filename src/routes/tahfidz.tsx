@@ -6,7 +6,7 @@ import { getIndustry } from "@/lib/industries";
 export const Route = createFileRoute("/tahfidz")({
   head: () => ({
     meta: [
-      { title: "Manajemen Tahfidz — HEXA" },
+      { title: "Tahfidz Management — HEXA" },
       { name: "description", content: "Manajemen hafalan Al-Qur'an — santri, halaqoh, murojaah, ujian dan sertifikasi." },
       { property: "og:title", content: "Tahfidz Management — HEXA" },
       { property: "og:description", content: "Sistem hafalan Al-Qur'an dalam satu dashboard." },

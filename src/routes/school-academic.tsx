@@ -6,7 +6,7 @@ import { getIndustry } from "@/lib/industries";
 export const Route = createFileRoute("/school-academic")({
   head: () => ({
     meta: [
-      { title: "Sistem Informasi Akademik Sekolah — HEXA" },
+      { title: "School Academic Information — HEXA" },
       { name: "description", content: "Sistem akademik sekolah — siswa, kelas, jadwal, ujian dan rapor." },
       { property: "og:title", content: "School Academic Information — HEXA" },
       { property: "og:description", content: "Operasi akademik untuk sekolah modern." },

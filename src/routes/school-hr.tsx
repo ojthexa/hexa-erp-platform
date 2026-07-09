@@ -6,7 +6,7 @@ import { getIndustry } from "@/lib/industries";
 export const Route = createFileRoute("/school-hr")({
   head: () => ({
     meta: [
-      { title: "Manajemen Karyawan Sekolah — HEXA" },
+      { title: "School Management Karyawan — HEXA" },
       { name: "description", content: "Kelola karyawan sekolah — guru, staf, absensi, cuti dan payroll dengan HEXA." },
       { property: "og:title", content: "School Management Karyawan — HEXA" },
       { property: "og:description", content: "HR sekolah dalam satu dashboard bersih." },
