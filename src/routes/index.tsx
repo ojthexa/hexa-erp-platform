@@ -66,6 +66,7 @@ function Home() {
               <br />
               Setiap dashboard dirancang dengan standar profesional, tampilan modern, dan siap mendukung operasional perusahaan.
             </p>
+          </div>
         </section>
 
         <section id="industries" className="mt-12 grid grid-cols-1 gap-5 sm:mt-16 md:grid-cols-2">
