@@ -61,8 +61,8 @@ function Home() {
             Pilih Bisnis Anda
           </h1>
           <p className="mt-3 text-base text-muted-foreground sm:text-lg">
-            Pilih salah satu industri untuk mengakses modul ERP-nya. Setiap workspace berbagi
-            desain HEXA yang bersih dan terhubung dengan data perusahaan Anda.
+            Pilih bidang usaha untuk mengakses dashboard ERP yang sesuai dengan kebutuhan bisnis Anda. 
+            Setiap dashboar dirancang sesuai standar, tampilan modern, dan siap mendukung operasional perusahaan.
           </p>
         </section>
 
