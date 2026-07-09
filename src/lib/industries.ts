@@ -93,7 +93,7 @@ export type IndustryConfig = {
 export const industries: IndustryConfig[] = [
   {
     id: "school-hr",
-    name: "School Management Karyawan",
+    name: "Manajemen Karyawan Sekolah",
     tagline: "School HR & Staff",
     description:
       "Kelola karyawan sekolah — guru, staf, absensi, cuti, payroll dan rekrutmen.",
@@ -136,7 +136,7 @@ export const industries: IndustryConfig[] = [
   },
   {
     id: "school-academic",
-    name: "School Academic Information",
+    name: "Sistem Informasi Akademik Sekolah",
     tagline: "Academic Operations",
     description:
       "Sistem akademik — siswa, kelas, jadwal, ujian, nilai dan rapor.",
@@ -177,7 +177,7 @@ export const industries: IndustryConfig[] = [
   },
   {
     id: "tahfidz",
-    name: "Tahfidz Management",
+    name: "Manajemen Tahfidz",
     tagline: "Islamic Studies",
     description:
       "Manajemen hafalan Al-Qur'an — santri, halaqoh, murojaah, tilawah dan ustadz.",
@@ -224,7 +224,7 @@ export const industries: IndustryConfig[] = [
   },
   {
     id: "office",
-    name: "Kantor ERP",
+    name: "ERP Kantor",
     tagline: "HR & Administrasi",
     description:
       "HR, payroll, absensi, inventaris dan administrasi untuk kantor modern.",
@@ -266,7 +266,7 @@ export const industries: IndustryConfig[] = [
   },
   {
     id: "restaurant",
-    name: "Restoran ERP",
+    name: "ERP Restoran",
     tagline: "POS & Dapur",
     description:
       "POS, dapur, inventaris, pembelian dan manajemen outlet untuk tim F&B.",
@@ -317,7 +317,7 @@ export const industries: IndustryConfig[] = [
   },
   {
     id: "manufacture",
-    name: "Manufaktur ERP",
+    name: "ERP Manufaktur",
     tagline: "Produksi & Pabrik",
     description:
       "Manajemen produksi, mesin, quality control, maintenance dan logistik pabrik.",
@@ -371,7 +371,7 @@ export const industries: IndustryConfig[] = [
   },
   {
     id: "clinic",
-    name: "Klinik ERP",
+    name: "ERP Klinik",
     tagline: "Layanan Pasien",
     description:
       "Manajemen pasien, apotek, inventaris dan keuangan untuk klinik.",
@@ -419,7 +419,7 @@ export const industries: IndustryConfig[] = [
   },
   {
     id: "warehouse",
-    name: "Gudang ERP",
+    name: "ERP Warehouse",
     tagline: "Stok & Logistik",
     description:
       "Inventaris, pembelian, pergerakan stok dan manajemen supplier skala besar.",
@@ -468,7 +468,7 @@ export const industries: IndustryConfig[] = [
   },
   {
     id: "project",
-    name: "Manajemen Proyek ERP",
+    name: "ERP Manajemen Proyek",
     tagline: "Proyek & Kolaborasi",
     description:
       "Kelola proyek, tim, timeline, tugas dan anggaran dalam satu ruang kerja.",
@@ -510,7 +510,7 @@ export const industries: IndustryConfig[] = [
   },
   {
     id: "yayasan",
-    name: "Yayasan ERP",
+    name: "ERP Yayasan",
     tagline: "Manajemen Yayasan",
     description:
       "Kelola donasi, program sosial, relawan, unit usaha dan pelaporan yayasan.",
