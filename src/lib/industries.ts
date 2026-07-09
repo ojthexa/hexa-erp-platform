@@ -49,6 +49,7 @@ import {
   ArrowDownToLine,
   ArrowUpFromLine,
   Handshake,
+  Megaphone,
   Repeat,
   Landmark,
   HandCoins,
@@ -534,7 +535,7 @@ export const industries: IndustryConfig[] = [
           { label: "Donatur", icon: Handshake },
           { label: "Donasi Masuk", icon: HandCoins },
           { label: "Zakat & Infaq", icon: Banknote },
-          { label: "Kampanye", icon: Megaphone_placeholder_never_used_replace_me },
+          { label: "Kampanye", icon: Megaphone },
         ],
       },
       {
