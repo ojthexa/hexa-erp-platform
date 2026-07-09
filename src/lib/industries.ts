@@ -63,22 +63,16 @@ export type IndustryId =
   | "restaurant"
   | "manufacture"
   | "clinic"
-  | "warehouse";
+  | "warehouse"
+  | "project"
+  | "yayasan";
 
 export type IndustryConfig = {
   id: IndustryId;
   name: string;
   tagline: string;
   description: string;
-  route:
-    | "/school-hr"
-    | "/school-academic"
-    | "/tahfidz"
-    | "/office"
-    | "/restaurant"
-    | "/manufacture"
-    | "/clinic"
-    | "/warehouse";
+  route: string;
   icon: LucideIcon;
   brandVar: string; // css var name
   gradient: string; // tailwind gradient classes for card accent
