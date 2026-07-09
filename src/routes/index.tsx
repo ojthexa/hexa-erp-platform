@@ -20,13 +20,13 @@ function Home() {
             </div>
             <div className="leading-tight">
               <div className="text-sm font-bold tracking-tight">HEXA ERP</div>
-              <div className="text-[11px] text-muted-foreground">Business Platform</div>
+              <div className="text-[11px] text-muted-foreground">Platform Bisnis</div>
             </div>
           </div>
           <nav className="ml-6 hidden items-center gap-5 text-sm md:flex">
-            <a className="text-muted-foreground hover:text-foreground transition-colors" href="#industries">Industries</a>
+            <a className="text-muted-foreground hover:text-foreground transition-colors" href="#industries">Industri</a>
             <a className="text-muted-foreground hover:text-foreground transition-colors" href="#platform">Platform</a>
-            <a className="text-muted-foreground hover:text-foreground transition-colors" href="#support">Support</a>
+            <a className="text-muted-foreground hover:text-foreground transition-colors" href="#support">Dukungan</a>
           </nav>
           <div className="ml-auto flex items-center gap-2">
             <Button variant="ghost" size="sm" className="hidden gap-2 rounded-full lg:flex">
@@ -55,14 +55,14 @@ function Home() {
         <section className="mx-auto max-w-3xl text-center animate-fade-in">
           <div className="inline-flex items-center gap-2 rounded-full border bg-card px-3 py-1 text-xs text-muted-foreground">
             <Sparkles className="h-3.5 w-3.5 text-primary" />
-            One platform for every industry
+            Satu platform untuk semua industri
           </div>
           <h1 className="mt-5 text-4xl font-bold tracking-tight sm:text-5xl">
-            Choose Your Business
+            Pilih Bisnis Anda
           </h1>
           <p className="mt-3 text-base text-muted-foreground sm:text-lg">
-            Select an industry to access its ERP modules. Every workspace shares the same
-            clean HEXA design and connects to your company data.
+            Pilih salah satu industri untuk mengakses modul ERP-nya. Setiap workspace berbagi
+            desain HEXA yang bersih dan terhubung dengan data perusahaan Anda.
           </p>
         </section>
 
@@ -72,7 +72,8 @@ function Home() {
             return (
               <Link
                 key={ind.id}
-                to={ind.route}
+                to="/login/$industryId"
+                params={{ industryId: ind.id }}
                 className="group card-elevated card-hover relative overflow-hidden p-6 animate-fade-in"
                 style={{ animationDelay: `${i * 60}ms` }}
               >
@@ -113,7 +114,7 @@ function Home() {
                       color: `var(${ind.brandVar})`,
                     }}
                   >
-                    Open Dashboard <ArrowRight className="h-3.5 w-3.5" />
+                    Masuk ke Dashboard <ArrowRight className="h-3.5 w-3.5" />
                   </span>
                 </div>
               </Link>
@@ -123,9 +124,9 @@ function Home() {
 
         <section id="platform" className="mt-16 grid grid-cols-1 gap-4 sm:grid-cols-3">
           {[
-            { title: "Modular", body: "Turn on only the modules you need per industry." },
-            { title: "Unified data", body: "One employee, finance and asset model across every workspace." },
-            { title: "Enterprise-ready", body: "Roles, audit, and multi-company controls out of the box." },
+            { title: "Modular", body: "Aktifkan hanya modul yang Anda perlukan untuk tiap industri." },
+            { title: "Data Terpadu", body: "Satu model karyawan, keuangan, dan aset di setiap workspace." },
+            { title: "Siap Enterprise", body: "Peran, audit, dan kontrol multi-perusahaan siap pakai." },
           ].map((f) => (
             <div key={f.title} className="card-elevated p-5">
               <div className="text-sm font-semibold">{f.title}</div>
@@ -135,11 +136,11 @@ function Home() {
         </section>
 
         <footer id="support" className="mt-16 flex flex-wrap items-center justify-between gap-3 border-t pt-6 text-xs text-muted-foreground">
-          <div>© {new Date().getFullYear()} HEXA ERP · All rights reserved</div>
+          <div>© {new Date().getFullYear()} HEXA ERP · Seluruh hak dilindungi</div>
           <div className="flex gap-4">
-            <a href="#" className="hover:text-foreground">Privacy</a>
-            <a href="#" className="hover:text-foreground">Terms</a>
-            <a href="#" className="hover:text-foreground">Docs</a>
+            <a href="#" className="hover:text-foreground">Privasi</a>
+            <a href="#" className="hover:text-foreground">Ketentuan</a>
+            <a href="#" className="hover:text-foreground">Dokumentasi</a>
           </div>
         </footer>
       </main>

@@ -18,6 +18,7 @@ import { Route as OfficeRouteImport } from './routes/office'
 import { Route as ManufactureRouteImport } from './routes/manufacture'
 import { Route as ClinicRouteImport } from './routes/clinic'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as LoginIndustryIdRouteImport } from './routes/login.$industryId'
 
 const WarehouseRoute = WarehouseRouteImport.update({
   id: '/warehouse',
@@ -64,6 +65,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LoginIndustryIdRoute = LoginIndustryIdRouteImport.update({
+  id: '/login/$industryId',
+  path: '/login/$industryId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -75,6 +81,7 @@ export interface FileRoutesByFullPath {
   '/school-hr': typeof SchoolHrRoute
   '/tahfidz': typeof TahfidzRoute
   '/warehouse': typeof WarehouseRoute
+  '/login/$industryId': typeof LoginIndustryIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -86,6 +93,7 @@ export interface FileRoutesByTo {
   '/school-hr': typeof SchoolHrRoute
   '/tahfidz': typeof TahfidzRoute
   '/warehouse': typeof WarehouseRoute
+  '/login/$industryId': typeof LoginIndustryIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -98,6 +106,7 @@ export interface FileRoutesById {
   '/school-hr': typeof SchoolHrRoute
   '/tahfidz': typeof TahfidzRoute
   '/warehouse': typeof WarehouseRoute
+  '/login/$industryId': typeof LoginIndustryIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -111,6 +120,7 @@ export interface FileRouteTypes {
     | '/school-hr'
     | '/tahfidz'
     | '/warehouse'
+    | '/login/$industryId'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -122,6 +132,7 @@ export interface FileRouteTypes {
     | '/school-hr'
     | '/tahfidz'
     | '/warehouse'
+    | '/login/$industryId'
   id:
     | '__root__'
     | '/'
@@ -133,6 +144,7 @@ export interface FileRouteTypes {
     | '/school-hr'
     | '/tahfidz'
     | '/warehouse'
+    | '/login/$industryId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -145,6 +157,7 @@ export interface RootRouteChildren {
   SchoolHrRoute: typeof SchoolHrRoute
   TahfidzRoute: typeof TahfidzRoute
   WarehouseRoute: typeof WarehouseRoute
+  LoginIndustryIdRoute: typeof LoginIndustryIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -212,6 +225,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/login/$industryId': {
+      id: '/login/$industryId'
+      path: '/login/$industryId'
+      fullPath: '/login/$industryId'
+      preLoaderRoute: typeof LoginIndustryIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -225,6 +245,7 @@ const rootRouteChildren: RootRouteChildren = {
   SchoolHrRoute: SchoolHrRoute,
   TahfidzRoute: TahfidzRoute,
   WarehouseRoute: WarehouseRoute,
+  LoginIndustryIdRoute: LoginIndustryIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
