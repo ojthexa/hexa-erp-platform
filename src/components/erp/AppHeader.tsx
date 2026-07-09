@@ -19,7 +19,7 @@ export function AppHeader({ industry }: { industry: IndustryConfig }) {
       <SidebarTrigger />
       <nav className="hidden items-center gap-1.5 text-sm md:flex">
         <Link to="/" className="text-muted-foreground hover:text-foreground transition-colors">
-          Industries
+          Industri
         </Link>
         <ChevronRight className="h-3.5 w-3.5 text-muted-foreground" />
         <span className="font-medium text-foreground">{industry.name}</span>
@@ -29,7 +29,7 @@ export function AppHeader({ industry }: { industry: IndustryConfig }) {
       <div className="relative ml-auto hidden max-w-sm flex-1 md:block">
         <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
         <Input
-          placeholder={`Search in ${industry.name}...`}
+          placeholder={`Cari di ${industry.name}...`}
           className="h-10 rounded-full bg-secondary/60 pl-9 border-transparent focus-visible:bg-card"
         />
       </div>
