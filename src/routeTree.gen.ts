@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as YayasanRouteImport } from './routes/yayasan'
 import { Route as WarehouseRouteImport } from './routes/warehouse'
 import { Route as TahfidzRouteImport } from './routes/tahfidz'
 import { Route as SchoolHrRouteImport } from './routes/school-hr'
@@ -16,10 +17,16 @@ import { Route as SchoolAcademicRouteImport } from './routes/school-academic'
 import { Route as RestaurantRouteImport } from './routes/restaurant'
 import { Route as OfficeRouteImport } from './routes/office'
 import { Route as ManufactureRouteImport } from './routes/manufacture'
+import { Route as ManajemenProyekRouteImport } from './routes/manajemen-proyek'
 import { Route as ClinicRouteImport } from './routes/clinic'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as LoginIndustryIdRouteImport } from './routes/login.$industryId'
 
+const YayasanRoute = YayasanRouteImport.update({
+  id: '/yayasan',
+  path: '/yayasan',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const WarehouseRoute = WarehouseRouteImport.update({
   id: '/warehouse',
   path: '/warehouse',
@@ -55,6 +62,11 @@ const ManufactureRoute = ManufactureRouteImport.update({
   path: '/manufacture',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ManajemenProyekRoute = ManajemenProyekRouteImport.update({
+  id: '/manajemen-proyek',
+  path: '/manajemen-proyek',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ClinicRoute = ClinicRouteImport.update({
   id: '/clinic',
   path: '/clinic',
@@ -74,6 +86,7 @@ const LoginIndustryIdRoute = LoginIndustryIdRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/clinic': typeof ClinicRoute
+  '/manajemen-proyek': typeof ManajemenProyekRoute
   '/manufacture': typeof ManufactureRoute
   '/office': typeof OfficeRoute
   '/restaurant': typeof RestaurantRoute
@@ -81,11 +94,13 @@ export interface FileRoutesByFullPath {
   '/school-hr': typeof SchoolHrRoute
   '/tahfidz': typeof TahfidzRoute
   '/warehouse': typeof WarehouseRoute
+  '/yayasan': typeof YayasanRoute
   '/login/$industryId': typeof LoginIndustryIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/clinic': typeof ClinicRoute
+  '/manajemen-proyek': typeof ManajemenProyekRoute
   '/manufacture': typeof ManufactureRoute
   '/office': typeof OfficeRoute
   '/restaurant': typeof RestaurantRoute
@@ -93,12 +108,14 @@ export interface FileRoutesByTo {
   '/school-hr': typeof SchoolHrRoute
   '/tahfidz': typeof TahfidzRoute
   '/warehouse': typeof WarehouseRoute
+  '/yayasan': typeof YayasanRoute
   '/login/$industryId': typeof LoginIndustryIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/clinic': typeof ClinicRoute
+  '/manajemen-proyek': typeof ManajemenProyekRoute
   '/manufacture': typeof ManufactureRoute
   '/office': typeof OfficeRoute
   '/restaurant': typeof RestaurantRoute
@@ -106,6 +123,7 @@ export interface FileRoutesById {
   '/school-hr': typeof SchoolHrRoute
   '/tahfidz': typeof TahfidzRoute
   '/warehouse': typeof WarehouseRoute
+  '/yayasan': typeof YayasanRoute
   '/login/$industryId': typeof LoginIndustryIdRoute
 }
 export interface FileRouteTypes {
@@ -113,6 +131,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/clinic'
+    | '/manajemen-proyek'
     | '/manufacture'
     | '/office'
     | '/restaurant'
@@ -120,11 +139,13 @@ export interface FileRouteTypes {
     | '/school-hr'
     | '/tahfidz'
     | '/warehouse'
+    | '/yayasan'
     | '/login/$industryId'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/clinic'
+    | '/manajemen-proyek'
     | '/manufacture'
     | '/office'
     | '/restaurant'
@@ -132,11 +153,13 @@ export interface FileRouteTypes {
     | '/school-hr'
     | '/tahfidz'
     | '/warehouse'
+    | '/yayasan'
     | '/login/$industryId'
   id:
     | '__root__'
     | '/'
     | '/clinic'
+    | '/manajemen-proyek'
     | '/manufacture'
     | '/office'
     | '/restaurant'
@@ -144,12 +167,14 @@ export interface FileRouteTypes {
     | '/school-hr'
     | '/tahfidz'
     | '/warehouse'
+    | '/yayasan'
     | '/login/$industryId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ClinicRoute: typeof ClinicRoute
+  ManajemenProyekRoute: typeof ManajemenProyekRoute
   ManufactureRoute: typeof ManufactureRoute
   OfficeRoute: typeof OfficeRoute
   RestaurantRoute: typeof RestaurantRoute
@@ -157,11 +182,19 @@ export interface RootRouteChildren {
   SchoolHrRoute: typeof SchoolHrRoute
   TahfidzRoute: typeof TahfidzRoute
   WarehouseRoute: typeof WarehouseRoute
+  YayasanRoute: typeof YayasanRoute
   LoginIndustryIdRoute: typeof LoginIndustryIdRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/yayasan': {
+      id: '/yayasan'
+      path: '/yayasan'
+      fullPath: '/yayasan'
+      preLoaderRoute: typeof YayasanRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/warehouse': {
       id: '/warehouse'
       path: '/warehouse'
@@ -211,6 +244,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ManufactureRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/manajemen-proyek': {
+      id: '/manajemen-proyek'
+      path: '/manajemen-proyek'
+      fullPath: '/manajemen-proyek'
+      preLoaderRoute: typeof ManajemenProyekRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/clinic': {
       id: '/clinic'
       path: '/clinic'
@@ -238,6 +278,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ClinicRoute: ClinicRoute,
+  ManajemenProyekRoute: ManajemenProyekRoute,
   ManufactureRoute: ManufactureRoute,
   OfficeRoute: OfficeRoute,
   RestaurantRoute: RestaurantRoute,
@@ -245,6 +286,7 @@ const rootRouteChildren: RootRouteChildren = {
   SchoolHrRoute: SchoolHrRoute,
   TahfidzRoute: TahfidzRoute,
   WarehouseRoute: WarehouseRoute,
+  YayasanRoute: YayasanRoute,
   LoginIndustryIdRoute: LoginIndustryIdRoute,
 }
 export const routeTree = rootRouteImport
