@@ -52,7 +52,7 @@ function Home() {
       </header>
 
       <main className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16">
-        <section className="mx-auto max-w-3xl text-center animate-fade-in">
+        <section className="mx-auto max-w-5xl text-center animate-fade-in">
           <div className="inline-flex items-center gap-2 rounded-full border bg-card px-3 py-1 text-xs text-muted-foreground">
             <Sparkles className="h-3.5 w-3.5 text-primary" />
             Satu platform untuk semua industri
