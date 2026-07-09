@@ -49,6 +49,16 @@ import {
   ArrowDownToLine,
   ArrowUpFromLine,
   Handshake,
+  Repeat,
+  Landmark,
+  HandCoins,
+  HeartHandshake,
+  Kanban,
+  ListChecks,
+  Timer,
+  Milestone,
+  GitBranch,
+  Target,
   type LucideIcon,
 } from "lucide-react";
 
