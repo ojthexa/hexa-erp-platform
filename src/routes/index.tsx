@@ -61,8 +61,8 @@ function Home() {
             Pilih Bisnis Anda
           </h1>
           <p className="mt-3 text-base text-muted-foreground sm:text-lg">
-            Pilih bidang usaha untuk mengakses dashboard ERP yang sesuai dengan kebutuhan bisnis Anda. 
-            Setiap dashboar dirancang sesuai standar, tampilan modern, dan siap mendukung operasional perusahaan.
+            Pilih bidang usaha untuk mengakses dashboard ERP yang sesuai dengan kebutuhan bisnis Anda.
+            <br /> Setiap dashboard dirancang dengan standar profesional, tampilan modern, dan siap mendukung operasional perusahaan.
           </p>
         </section>
 
