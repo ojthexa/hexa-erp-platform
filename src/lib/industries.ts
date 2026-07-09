@@ -107,9 +107,8 @@ export const industries: IndustryConfig[] = [
         label: "Karyawan",
         items: [
           { label: "Guru", icon: UserCog },
-          { label: "Guru Pengganti", icon: Repeat },
           { label: "Staf", icon: Users },
-          { label: "Karyawan", icon: BriefcaseBusiness },
+          { label: "SOP", icon: BriefcaseBusiness },
           { label: "Rekrutmen", icon: UserPlus },
         ],
       },
@@ -117,6 +116,7 @@ export const industries: IndustryConfig[] = [
         label: "Waktu & Gaji",
         items: [
           { label: "Absensi", icon: ClipboardCheck },
+          { label: "Guru Pengganti", icon: Repeat },
           { label: "Cuti", icon: CalendarClock },
           { label: "Payroll", icon: Banknote },
           { label: "Kontrak", icon: FileText },
