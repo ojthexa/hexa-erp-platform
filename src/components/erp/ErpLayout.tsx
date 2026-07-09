@@ -34,7 +34,7 @@ export function ErpLayout({
               </div>
               <div className="flex items-center gap-2 text-xs text-muted-foreground">
                 <span className="inline-flex h-2 w-2 rounded-full bg-success" />
-                Live · Updated just now
+                Aktif · Baru saja diperbarui
               </div>
             </div>
             <div className="animate-fade-in">{children}</div>
