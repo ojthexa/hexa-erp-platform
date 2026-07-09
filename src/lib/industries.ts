@@ -92,6 +92,48 @@ export type IndustryConfig = {
 
 export const industries: IndustryConfig[] = [
   {
+    id: "office",
+    name: "ERP Kantor",
+    tagline: "HR & Administrasi",
+    description:
+      "HR, payroll, absensi, inventaris dan administrasi untuk kantor modern.",
+    route: "/office",
+    icon: Building2,
+    brandVar: "--brand-office",
+    gradient: "from-sky-500/15 to-cyan-500/5",
+    menu: [
+      { label: "Overview", items: [{ label: "Dashboard", icon: LayoutDashboard }] },
+      {
+        label: "Karyawan",
+        items: [
+          { label: "Karyawan", icon: Users },
+          { label: "HR", icon: UserCog },
+          { label: "Rekrutmen", icon: UserPlus },
+          { label: "Absensi", icon: ClipboardCheck },
+          { label: "Cuti", icon: CalendarClock },
+          { label: "Payroll", icon: Banknote },
+        ],
+      },
+      {
+        label: "Operasional",
+        items: [
+          { label: "Inventaris", icon: Boxes },
+          { label: "Aset", icon: Package },
+          { label: "Proyek", icon: FolderKanban },
+          { label: "Surat", icon: Mail },
+        ],
+      },
+      {
+        label: "Keuangan",
+        items: [
+          { label: "Keuangan", icon: Wallet },
+          { label: "Laporan", icon: PieChart },
+          { label: "Pengaturan", icon: Settings },
+        ],
+      },
+    ],
+  },
+  {
     id: "school-hr",
     name: "Manajemen Karyawan Sekolah",
     tagline: "School HR & Staff",
@@ -223,35 +265,47 @@ export const industries: IndustryConfig[] = [
     ],
   },
   {
-    id: "office",
-    name: "ERP Kantor",
-    tagline: "HR & Administrasi",
+    id: "manufacture",
+    name: "ERP Manufaktur",
+    tagline: "Produksi & Pabrik",
     description:
-      "HR, payroll, absensi, inventaris dan administrasi untuk kantor modern.",
-    route: "/office",
-    icon: Building2,
-    brandVar: "--brand-office",
-    gradient: "from-sky-500/15 to-cyan-500/5",
+      "Manajemen produksi, mesin, quality control, maintenance dan logistik pabrik.",
+    route: "/manufacture",
+    icon: FactoryIcon,
+    brandVar: "--brand-manufacture",
+    gradient: "from-amber-500/15 to-yellow-500/5",
     menu: [
       { label: "Overview", items: [{ label: "Dashboard", icon: LayoutDashboard }] },
+      {
+        label: "Produksi",
+        items: [
+          { label: "Produksi", icon: Factory },
+          { label: "Work Order", icon: FolderKanban },
+          { label: "BOM", icon: BookMarked },
+          { label: "Mesin", icon: Wrench },
+          { label: "Quality Control", icon: ShieldCheck },
+          { label: "Maintenance", icon: Wrench },
+        ],
+      },
       {
         label: "Karyawan",
         items: [
           { label: "Karyawan", icon: Users },
-          { label: "HR", icon: UserCog },
-          { label: "Rekrutmen", icon: UserPlus },
+          { label: "Operator", icon: IdCard },
           { label: "Absensi", icon: ClipboardCheck },
-          { label: "Cuti", icon: CalendarClock },
           { label: "Payroll", icon: Banknote },
         ],
       },
       {
-        label: "Operasional",
+        label: "Pasokan",
         items: [
+          { label: "Gudang", icon: Warehouse },
           { label: "Inventaris", icon: Boxes },
-          { label: "Aset", icon: Package },
-          { label: "Proyek", icon: FolderKanban },
-          { label: "Surat", icon: Mail },
+          { label: "Bahan Baku", icon: Package },
+          { label: "Pembelian", icon: ShoppingCart },
+          { label: "Logistik", icon: RouteIcon },
+          { label: "Energi & Bahan Bakar", icon: Fuel },
+          { label: "Armada", icon: Car },
         ],
       },
       {
@@ -259,6 +313,97 @@ export const industries: IndustryConfig[] = [
         items: [
           { label: "Keuangan", icon: Wallet },
           { label: "Laporan", icon: PieChart },
+          { label: "Pengaturan", icon: Settings },
+        ],
+      },
+    ],
+  },
+  {
+    id: "project",
+    name: "ERP Manajemen Proyek",
+    tagline: "Proyek & Kolaborasi",
+    description:
+      "Kelola proyek, tim, timeline, tugas dan anggaran dalam satu ruang kerja.",
+    route: "/manajemen-proyek",
+    icon: Kanban,
+    brandVar: "--brand-project",
+    gradient: "from-cyan-500/15 to-blue-500/5",
+    menu: [
+      { label: "Ringkasan", items: [{ label: "Dashboard", icon: LayoutDashboard }] },
+      {
+        label: "Proyek",
+        items: [
+          { label: "Daftar Proyek", icon: FolderKanban },
+          { label: "Papan Kanban", icon: Kanban },
+          { label: "Milestone", icon: Milestone },
+          { label: "Tugas", icon: ListChecks },
+          { label: "Gantt Chart", icon: GitBranch },
+          { label: "Sasaran", icon: Target },
+        ],
+      },
+      {
+        label: "Tim",
+        items: [
+          { label: "Anggota Tim", icon: Users },
+          { label: "Time Tracking", icon: Timer },
+          { label: "Kalender", icon: CalendarDays },
+        ],
+      },
+      {
+        label: "Keuangan",
+        items: [
+          { label: "Anggaran", icon: Wallet },
+          { label: "Tagihan", icon: Receipt },
+          { label: "Laporan", icon: PieChart },
+          { label: "Pengaturan", icon: Settings },
+        ],
+      },
+    ],
+  },
+  {
+    id: "warehouse",
+    name: "ERP Warehouse",
+    tagline: "Stok & Logistik",
+    description:
+      "Inventaris, pembelian, pergerakan stok dan manajemen supplier skala besar.",
+    route: "/warehouse",
+    icon: Warehouse,
+    brandVar: "--brand-warehouse",
+    gradient: "from-violet-500/15 to-purple-500/5",
+    menu: [
+      { label: "Overview", items: [{ label: "Dashboard", icon: LayoutDashboard }] },
+      {
+        label: "Stok",
+        items: [
+          { label: "Inventaris", icon: Boxes },
+          { label: "Produk", icon: Package },
+          { label: "Pergerakan Stok", icon: Move3d },
+          { label: "Gudang", icon: Warehouse },
+        ],
+      },
+      {
+        label: "Perdagangan",
+        items: [
+          { label: "Supplier", icon: Handshake },
+          { label: "Purchase Order", icon: ShoppingCart },
+          { label: "Sales Order", icon: Receipt },
+          { label: "Penerimaan", icon: ArrowDownToLine },
+          { label: "Pengiriman", icon: ArrowUpFromLine },
+        ],
+      },
+      {
+        label: "Karyawan",
+        items: [
+          { label: "Karyawan", icon: Users },
+          { label: "Absensi", icon: ClipboardCheck },
+          { label: "Payroll", icon: Banknote },
+        ],
+      },
+      {
+        label: "Keuangan",
+        items: [
+          { label: "Laporan", icon: PieChart },
+          { label: "Keuangan", icon: Wallet },
           { label: "Pengaturan", icon: Settings },
         ],
       },
@@ -316,47 +461,42 @@ export const industries: IndustryConfig[] = [
     ],
   },
   {
-    id: "manufacture",
-    name: "ERP Manufaktur",
-    tagline: "Produksi & Pabrik",
+    id: "yayasan",
+    name: "ERP Yayasan",
+    tagline: "Manajemen Yayasan",
     description:
-      "Manajemen produksi, mesin, quality control, maintenance dan logistik pabrik.",
-    route: "/manufacture",
-    icon: FactoryIcon,
-    brandVar: "--brand-manufacture",
-    gradient: "from-amber-500/15 to-yellow-500/5",
+      "Kelola donasi, program sosial, relawan, unit usaha dan pelaporan yayasan.",
+    route: "/yayasan",
+    icon: Landmark,
+    brandVar: "--brand-yayasan",
+    gradient: "from-rose-500/15 to-orange-500/5",
     menu: [
-      { label: "Overview", items: [{ label: "Dashboard", icon: LayoutDashboard }] },
+      { label: "Ringkasan", items: [{ label: "Dashboard", icon: LayoutDashboard }] },
       {
-        label: "Produksi",
+        label: "Program",
         items: [
-          { label: "Produksi", icon: Factory },
-          { label: "Work Order", icon: FolderKanban },
-          { label: "BOM", icon: BookMarked },
-          { label: "Mesin", icon: Wrench },
-          { label: "Quality Control", icon: ShieldCheck },
-          { label: "Maintenance", icon: Wrench },
+          { label: "Program Sosial", icon: HeartHandshake },
+          { label: "Penerima Manfaat", icon: UserRound },
+          { label: "Unit Usaha", icon: Building2 },
+          { label: "Dokumen", icon: FileText },
         ],
       },
       {
-        label: "Karyawan",
+        label: "Donasi",
         items: [
-          { label: "Karyawan", icon: Users },
-          { label: "Operator", icon: IdCard },
+          { label: "Donatur", icon: Handshake },
+          { label: "Donasi Masuk", icon: HandCoins },
+          { label: "Zakat & Infaq", icon: Banknote },
+          { label: "Kampanye", icon: Megaphone },
+        ],
+      },
+      {
+        label: "SDM",
+        items: [
+          { label: "Pengurus", icon: UserCog },
+          { label: "Relawan", icon: Users },
           { label: "Absensi", icon: ClipboardCheck },
           { label: "Payroll", icon: Banknote },
-        ],
-      },
-      {
-        label: "Pasokan",
-        items: [
-          { label: "Gudang", icon: Warehouse },
-          { label: "Inventaris", icon: Boxes },
-          { label: "Bahan Baku", icon: Package },
-          { label: "Pembelian", icon: ShoppingCart },
-          { label: "Logistik", icon: RouteIcon },
-          { label: "Energi & Bahan Bakar", icon: Fuel },
-          { label: "Armada", icon: Car },
         ],
       },
       {
@@ -403,146 +543,6 @@ export const industries: IndustryConfig[] = [
         label: "Karyawan",
         items: [
           { label: "Karyawan", icon: Users },
-          { label: "Absensi", icon: ClipboardCheck },
-          { label: "Payroll", icon: Banknote },
-        ],
-      },
-      {
-        label: "Keuangan",
-        items: [
-          { label: "Keuangan", icon: Wallet },
-          { label: "Laporan", icon: PieChart },
-          { label: "Pengaturan", icon: Settings },
-        ],
-      },
-    ],
-  },
-  {
-    id: "warehouse",
-    name: "ERP Warehouse",
-    tagline: "Stok & Logistik",
-    description:
-      "Inventaris, pembelian, pergerakan stok dan manajemen supplier skala besar.",
-    route: "/warehouse",
-    icon: Warehouse,
-    brandVar: "--brand-warehouse",
-    gradient: "from-violet-500/15 to-purple-500/5",
-    menu: [
-      { label: "Overview", items: [{ label: "Dashboard", icon: LayoutDashboard }] },
-      {
-        label: "Stok",
-        items: [
-          { label: "Inventaris", icon: Boxes },
-          { label: "Produk", icon: Package },
-          { label: "Pergerakan Stok", icon: Move3d },
-          { label: "Gudang", icon: Warehouse },
-        ],
-      },
-      {
-        label: "Perdagangan",
-        items: [
-          { label: "Supplier", icon: Handshake },
-          { label: "Purchase Order", icon: ShoppingCart },
-          { label: "Sales Order", icon: Receipt },
-          { label: "Penerimaan", icon: ArrowDownToLine },
-          { label: "Pengiriman", icon: ArrowUpFromLine },
-        ],
-      },
-      {
-        label: "Karyawan",
-        items: [
-          { label: "Karyawan", icon: Users },
-          { label: "Absensi", icon: ClipboardCheck },
-          { label: "Payroll", icon: Banknote },
-        ],
-      },
-      {
-        label: "Keuangan",
-        items: [
-          { label: "Laporan", icon: PieChart },
-          { label: "Keuangan", icon: Wallet },
-          { label: "Pengaturan", icon: Settings },
-        ],
-      },
-    ],
-  },
-  {
-    id: "project",
-    name: "ERP Manajemen Proyek",
-    tagline: "Proyek & Kolaborasi",
-    description:
-      "Kelola proyek, tim, timeline, tugas dan anggaran dalam satu ruang kerja.",
-    route: "/manajemen-proyek",
-    icon: Kanban,
-    brandVar: "--brand-project",
-    gradient: "from-cyan-500/15 to-blue-500/5",
-    menu: [
-      { label: "Ringkasan", items: [{ label: "Dashboard", icon: LayoutDashboard }] },
-      {
-        label: "Proyek",
-        items: [
-          { label: "Daftar Proyek", icon: FolderKanban },
-          { label: "Papan Kanban", icon: Kanban },
-          { label: "Milestone", icon: Milestone },
-          { label: "Tugas", icon: ListChecks },
-          { label: "Gantt Chart", icon: GitBranch },
-          { label: "Sasaran", icon: Target },
-        ],
-      },
-      {
-        label: "Tim",
-        items: [
-          { label: "Anggota Tim", icon: Users },
-          { label: "Time Tracking", icon: Timer },
-          { label: "Kalender", icon: CalendarDays },
-        ],
-      },
-      {
-        label: "Keuangan",
-        items: [
-          { label: "Anggaran", icon: Wallet },
-          { label: "Tagihan", icon: Receipt },
-          { label: "Laporan", icon: PieChart },
-          { label: "Pengaturan", icon: Settings },
-        ],
-      },
-    ],
-  },
-  {
-    id: "yayasan",
-    name: "ERP Yayasan",
-    tagline: "Manajemen Yayasan",
-    description:
-      "Kelola donasi, program sosial, relawan, unit usaha dan pelaporan yayasan.",
-    route: "/yayasan",
-    icon: Landmark,
-    brandVar: "--brand-yayasan",
-    gradient: "from-rose-500/15 to-orange-500/5",
-    menu: [
-      { label: "Ringkasan", items: [{ label: "Dashboard", icon: LayoutDashboard }] },
-      {
-        label: "Program",
-        items: [
-          { label: "Program Sosial", icon: HeartHandshake },
-          { label: "Penerima Manfaat", icon: UserRound },
-          { label: "Unit Usaha", icon: Building2 },
-          { label: "Dokumen", icon: FileText },
-        ],
-      },
-      {
-        label: "Donasi",
-        items: [
-          { label: "Donatur", icon: Handshake },
-          { label: "Donasi Masuk", icon: HandCoins },
-          { label: "Zakat & Infaq", icon: Banknote },
-          { label: "Kampanye", icon: Megaphone },
-        ],
-      },
-      {
-        label: "SDM",
-        items: [
-          { label: "Pengurus", icon: UserCog },
-          { label: "Relawan", icon: Users },
           { label: "Absensi", icon: ClipboardCheck },
           { label: "Payroll", icon: Banknote },
         ],
