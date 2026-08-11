@@ -523,10 +523,113 @@ export const industries: IndustryConfig[] = [
     ],
   },
   {
+    id: "umroh",
+    name: "ERP Umroh & Haji",
+    tagline: "Travel & Jamaah",
+    description:
+      "Kelola paket umroh, jamaah, visa, penerbangan, hotel, agen dan komisi.",
+    route: "/umroh",
+    icon: Plane,
+    brandVar: "--brand-umroh",
+    gradient: "from-emerald-500/15 to-lime-500/5",
+    menu: [
+      { label: "Ringkasan", items: [{ label: "Dashboard", icon: LayoutDashboard }] },
+      {
+        label: "Jamaah",
+        items: [
+          { label: "Data Jamaah", icon: Users },
+          { label: "Booking", icon: Ticket },
+          { label: "Dokumen", icon: FileText },
+          { label: "Visa", icon: Stamp },
+          { label: "Manasik", icon: BookOpen },
+        ],
+      },
+      {
+        label: "Operasional",
+        items: [
+          { label: "Paket Umroh", icon: Package },
+          { label: "Keberangkatan", icon: CalendarDays },
+          { label: "Penerbangan", icon: Plane },
+          { label: "Hotel", icon: BedDouble },
+          { label: "Transportasi", icon: Car },
+          { label: "Itinerari", icon: MapPinned },
+          { label: "Tour Leader", icon: UserCog },
+        ],
+      },
+      {
+        label: "Kemitraan",
+        items: [
+          { label: "Agen", icon: Handshake },
+          { label: "Komisi", icon: HandCoins },
+          { label: "Referral", icon: Megaphone },
+          { label: "Loyalitas", icon: Gift },
+        ],
+      },
+      {
+        label: "Keuangan",
+        items: [
+          { label: "Pembayaran", icon: Receipt },
+          { label: "Keuangan", icon: Wallet },
+          { label: "Laporan", icon: PieChart },
+          { label: "Pengaturan", icon: Settings },
+        ],
+      },
+    ],
+  },
+  {
+    id: "apotek",
+    name: "ERP Apotek",
+    tagline: "Farmasi & POS",
+    description:
+      "POS apotek, stok obat, kadaluarsa, resep, supplier dan laporan penjualan.",
+    route: "/apotek",
+    icon: PillIcon,
+    brandVar: "--brand-apotek",
+    gradient: "from-cyan-500/15 to-teal-500/5",
+    menu: [
+      { label: "Ringkasan", items: [{ label: "Dashboard", icon: LayoutDashboard }] },
+      {
+        label: "Penjualan",
+        items: [
+          { label: "POS Kasir", icon: ShoppingCart },
+          { label: "Penjualan", icon: Receipt },
+          { label: "Resep Dokter", icon: ClipboardList },
+          { label: "Pelanggan", icon: UserRound },
+        ],
+      },
+      {
+        label: "Persediaan",
+        items: [
+          { label: "Produk Obat", icon: PillIcon },
+          { label: "Inventaris", icon: Boxes },
+          { label: "Stok Opname", icon: ScanBarcode },
+          { label: "Kadaluarsa", icon: CalendarX2 },
+          { label: "Pembelian", icon: ShoppingCart },
+          { label: "Supplier", icon: Truck },
+        ],
+      },
+      {
+        label: "Klinis",
+        items: [
+          { label: "Apoteker", icon: StethoscopeIcon },
+          { label: "Karyawan", icon: Users },
+          { label: "Absensi", icon: ClipboardCheck },
+        ],
+      },
+      {
+        label: "Keuangan",
+        items: [
+          { label: "Keuangan", icon: Wallet },
+          { label: "Laporan", icon: PieChart },
+          { label: "Pengaturan", icon: Settings },
+        ],
+      },
+    ],
+  },
+  {
     id: "clinic",
     name: "ERP Klinik",
     tagline: "Layanan Pasien",
-*** placeholder
     description:
       "Manajemen pasien, apotek, inventaris dan keuangan untuk klinik.",
     route: "/clinic",
