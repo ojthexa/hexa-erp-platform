@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as YayasanRouteImport } from './routes/yayasan'
 import { Route as WarehouseRouteImport } from './routes/warehouse'
+import { Route as UmrohRouteImport } from './routes/umroh'
 import { Route as TahfidzRouteImport } from './routes/tahfidz'
 import { Route as SchoolHrRouteImport } from './routes/school-hr'
 import { Route as SchoolAcademicRouteImport } from './routes/school-academic'
@@ -19,6 +20,7 @@ import { Route as OfficeRouteImport } from './routes/office'
 import { Route as ManufactureRouteImport } from './routes/manufacture'
 import { Route as ManajemenProyekRouteImport } from './routes/manajemen-proyek'
 import { Route as ClinicRouteImport } from './routes/clinic'
+import { Route as ApotekRouteImport } from './routes/apotek'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as LoginIndustryIdRouteImport } from './routes/login.$industryId'
 
@@ -30,6 +32,11 @@ const YayasanRoute = YayasanRouteImport.update({
 const WarehouseRoute = WarehouseRouteImport.update({
   id: '/warehouse',
   path: '/warehouse',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UmrohRoute = UmrohRouteImport.update({
+  id: '/umroh',
+  path: '/umroh',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TahfidzRoute = TahfidzRouteImport.update({
@@ -72,6 +79,11 @@ const ClinicRoute = ClinicRouteImport.update({
   path: '/clinic',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApotekRoute = ApotekRouteImport.update({
+  id: '/apotek',
+  path: '/apotek',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -85,6 +97,7 @@ const LoginIndustryIdRoute = LoginIndustryIdRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/apotek': typeof ApotekRoute
   '/clinic': typeof ClinicRoute
   '/manajemen-proyek': typeof ManajemenProyekRoute
   '/manufacture': typeof ManufactureRoute
@@ -93,12 +106,14 @@ export interface FileRoutesByFullPath {
   '/school-academic': typeof SchoolAcademicRoute
   '/school-hr': typeof SchoolHrRoute
   '/tahfidz': typeof TahfidzRoute
+  '/umroh': typeof UmrohRoute
   '/warehouse': typeof WarehouseRoute
   '/yayasan': typeof YayasanRoute
   '/login/$industryId': typeof LoginIndustryIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/apotek': typeof ApotekRoute
   '/clinic': typeof ClinicRoute
   '/manajemen-proyek': typeof ManajemenProyekRoute
   '/manufacture': typeof ManufactureRoute
@@ -107,6 +122,7 @@ export interface FileRoutesByTo {
   '/school-academic': typeof SchoolAcademicRoute
   '/school-hr': typeof SchoolHrRoute
   '/tahfidz': typeof TahfidzRoute
+  '/umroh': typeof UmrohRoute
   '/warehouse': typeof WarehouseRoute
   '/yayasan': typeof YayasanRoute
   '/login/$industryId': typeof LoginIndustryIdRoute
@@ -114,6 +130,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/apotek': typeof ApotekRoute
   '/clinic': typeof ClinicRoute
   '/manajemen-proyek': typeof ManajemenProyekRoute
   '/manufacture': typeof ManufactureRoute
@@ -122,6 +139,7 @@ export interface FileRoutesById {
   '/school-academic': typeof SchoolAcademicRoute
   '/school-hr': typeof SchoolHrRoute
   '/tahfidz': typeof TahfidzRoute
+  '/umroh': typeof UmrohRoute
   '/warehouse': typeof WarehouseRoute
   '/yayasan': typeof YayasanRoute
   '/login/$industryId': typeof LoginIndustryIdRoute
@@ -130,6 +148,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/apotek'
     | '/clinic'
     | '/manajemen-proyek'
     | '/manufacture'
@@ -138,12 +157,14 @@ export interface FileRouteTypes {
     | '/school-academic'
     | '/school-hr'
     | '/tahfidz'
+    | '/umroh'
     | '/warehouse'
     | '/yayasan'
     | '/login/$industryId'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/apotek'
     | '/clinic'
     | '/manajemen-proyek'
     | '/manufacture'
@@ -152,12 +173,14 @@ export interface FileRouteTypes {
     | '/school-academic'
     | '/school-hr'
     | '/tahfidz'
+    | '/umroh'
     | '/warehouse'
     | '/yayasan'
     | '/login/$industryId'
   id:
     | '__root__'
     | '/'
+    | '/apotek'
     | '/clinic'
     | '/manajemen-proyek'
     | '/manufacture'
@@ -166,6 +189,7 @@ export interface FileRouteTypes {
     | '/school-academic'
     | '/school-hr'
     | '/tahfidz'
+    | '/umroh'
     | '/warehouse'
     | '/yayasan'
     | '/login/$industryId'
@@ -173,6 +197,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ApotekRoute: typeof ApotekRoute
   ClinicRoute: typeof ClinicRoute
   ManajemenProyekRoute: typeof ManajemenProyekRoute
   ManufactureRoute: typeof ManufactureRoute
@@ -181,6 +206,7 @@ export interface RootRouteChildren {
   SchoolAcademicRoute: typeof SchoolAcademicRoute
   SchoolHrRoute: typeof SchoolHrRoute
   TahfidzRoute: typeof TahfidzRoute
+  UmrohRoute: typeof UmrohRoute
   WarehouseRoute: typeof WarehouseRoute
   YayasanRoute: typeof YayasanRoute
   LoginIndustryIdRoute: typeof LoginIndustryIdRoute
@@ -200,6 +226,13 @@ declare module '@tanstack/react-router' {
       path: '/warehouse'
       fullPath: '/warehouse'
       preLoaderRoute: typeof WarehouseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/umroh': {
+      id: '/umroh'
+      path: '/umroh'
+      fullPath: '/umroh'
+      preLoaderRoute: typeof UmrohRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/tahfidz': {
@@ -258,6 +291,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ClinicRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/apotek': {
+      id: '/apotek'
+      path: '/apotek'
+      fullPath: '/apotek'
+      preLoaderRoute: typeof ApotekRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -277,6 +317,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ApotekRoute: ApotekRoute,
   ClinicRoute: ClinicRoute,
   ManajemenProyekRoute: ManajemenProyekRoute,
   ManufactureRoute: ManufactureRoute,
@@ -285,6 +326,7 @@ const rootRouteChildren: RootRouteChildren = {
   SchoolAcademicRoute: SchoolAcademicRoute,
   SchoolHrRoute: SchoolHrRoute,
   TahfidzRoute: TahfidzRoute,
+  UmrohRoute: UmrohRoute,
   WarehouseRoute: WarehouseRoute,
   YayasanRoute: YayasanRoute,
   LoginIndustryIdRoute: LoginIndustryIdRoute,
