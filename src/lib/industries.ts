@@ -60,6 +60,17 @@ import {
   Milestone,
   GitBranch,
   Target,
+  Plane,
+  BedDouble,
+  MapPinned,
+  StampIcon,
+  Ticket,
+  Gift,
+  Pill as PillIcon,
+  ScanBarcode,
+  CalendarX2,
+  ClipboardList,
+  Stethoscope as StethoscopeIcon,
   type LucideIcon,
 } from "lucide-react";
 
@@ -76,7 +87,9 @@ export type IndustryId =
   | "clinic"
   | "warehouse"
   | "project"
-  | "yayasan";
+  | "yayasan"
+  | "umroh"
+  | "apotek";
 
 export type IndustryConfig = {
   id: IndustryId;
