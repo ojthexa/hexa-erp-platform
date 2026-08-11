@@ -63,7 +63,7 @@ import {
   Plane,
   BedDouble,
   MapPinned,
-  StampIcon,
+  Stamp,
   Ticket,
   Gift,
   Pill as PillIcon,
@@ -526,6 +526,7 @@ export const industries: IndustryConfig[] = [
     id: "clinic",
     name: "ERP Klinik",
     tagline: "Layanan Pasien",
+*** placeholder
     description:
       "Manajemen pasien, apotek, inventaris dan keuangan untuk klinik.",
     route: "/clinic",
