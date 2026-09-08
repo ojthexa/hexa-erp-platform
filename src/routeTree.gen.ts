@@ -22,19 +22,8 @@ import { Route as TahfidzRouteImport } from './routes/tahfidz'
 import { Route as UmrohRouteImport } from './routes/umroh'
 import { Route as WarehouseRouteImport } from './routes/warehouse'
 import { Route as YayasanRouteImport } from './routes/yayasan'
-import { Route as ApotekLandingRouteImport } from './routes/apotek/landing'
-import { Route as ClinicLandingRouteImport } from './routes/clinic/landing'
+import { Route as IndustryLandingRouteImport } from './routes/$industry/landing'
 import { Route as LoginIndustryIdRouteImport } from './routes/login.$industryId'
-import { Route as ManajemenProyekLandingRouteImport } from './routes/manajemen-proyek/landing'
-import { Route as ManufactureLandingRouteImport } from './routes/manufacture/landing'
-import { Route as OfficeLandingRouteImport } from './routes/office/landing'
-import { Route as RestaurantLandingRouteImport } from './routes/restaurant/landing'
-import { Route as SchoolAcademicLandingRouteImport } from './routes/school-academic/landing'
-import { Route as SchoolHrLandingRouteImport } from './routes/school-hr/landing'
-import { Route as TahfidzLandingRouteImport } from './routes/tahfidz/landing'
-import { Route as UmrohLandingRouteImport } from './routes/umroh/landing'
-import { Route as WarehouseLandingRouteImport } from './routes/warehouse/landing'
-import { Route as YayasanLandingRouteImport } from './routes/yayasan/landing'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -101,156 +90,68 @@ const YayasanRoute = YayasanRouteImport.update({
   path: '/yayasan',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApotekLandingRoute = ApotekLandingRouteImport.update({
-  id: '/landing',
-  path: '/landing',
-  getParentRoute: () => ApotekRoute,
-} as any)
-const ClinicLandingRoute = ClinicLandingRouteImport.update({
-  id: '/landing',
-  path: '/landing',
-  getParentRoute: () => ClinicRoute,
+const IndustryLandingRoute = IndustryLandingRouteImport.update({
+  id: '/$industry/landing',
+  path: '/$industry/landing',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const LoginIndustryIdRoute = LoginIndustryIdRouteImport.update({
   id: '/login/$industryId',
   path: '/login/$industryId',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ManajemenProyekLandingRoute = ManajemenProyekLandingRouteImport.update({
-  id: '/landing',
-  path: '/landing',
-  getParentRoute: () => ManajemenProyekRoute,
-} as any)
-const ManufactureLandingRoute = ManufactureLandingRouteImport.update({
-  id: '/landing',
-  path: '/landing',
-  getParentRoute: () => ManufactureRoute,
-} as any)
-const OfficeLandingRoute = OfficeLandingRouteImport.update({
-  id: '/landing',
-  path: '/landing',
-  getParentRoute: () => OfficeRoute,
-} as any)
-const RestaurantLandingRoute = RestaurantLandingRouteImport.update({
-  id: '/landing',
-  path: '/landing',
-  getParentRoute: () => RestaurantRoute,
-} as any)
-const SchoolAcademicLandingRoute = SchoolAcademicLandingRouteImport.update({
-  id: '/landing',
-  path: '/landing',
-  getParentRoute: () => SchoolAcademicRoute,
-} as any)
-const SchoolHrLandingRoute = SchoolHrLandingRouteImport.update({
-  id: '/landing',
-  path: '/landing',
-  getParentRoute: () => SchoolHrRoute,
-} as any)
-const TahfidzLandingRoute = TahfidzLandingRouteImport.update({
-  id: '/landing',
-  path: '/landing',
-  getParentRoute: () => TahfidzRoute,
-} as any)
-const UmrohLandingRoute = UmrohLandingRouteImport.update({
-  id: '/landing',
-  path: '/landing',
-  getParentRoute: () => UmrohRoute,
-} as any)
-const WarehouseLandingRoute = WarehouseLandingRouteImport.update({
-  id: '/landing',
-  path: '/landing',
-  getParentRoute: () => WarehouseRoute,
-} as any)
-const YayasanLandingRoute = YayasanLandingRouteImport.update({
-  id: '/landing',
-  path: '/landing',
-  getParentRoute: () => YayasanRoute,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/apotek': typeof ApotekRouteWithChildren
-  '/clinic': typeof ClinicRouteWithChildren
-  '/manajemen-proyek': typeof ManajemenProyekRouteWithChildren
-  '/manufacture': typeof ManufactureRouteWithChildren
-  '/office': typeof OfficeRouteWithChildren
-  '/restaurant': typeof RestaurantRouteWithChildren
-  '/school-academic': typeof SchoolAcademicRouteWithChildren
-  '/school-hr': typeof SchoolHrRouteWithChildren
-  '/tahfidz': typeof TahfidzRouteWithChildren
-  '/umroh': typeof UmrohRouteWithChildren
-  '/warehouse': typeof WarehouseRouteWithChildren
-  '/yayasan': typeof YayasanRouteWithChildren
-  '/apotek/landing': typeof ApotekLandingRoute
-  '/clinic/landing': typeof ClinicLandingRoute
+  '/apotek': typeof ApotekRoute
+  '/clinic': typeof ClinicRoute
+  '/manajemen-proyek': typeof ManajemenProyekRoute
+  '/manufacture': typeof ManufactureRoute
+  '/office': typeof OfficeRoute
+  '/restaurant': typeof RestaurantRoute
+  '/school-academic': typeof SchoolAcademicRoute
+  '/school-hr': typeof SchoolHrRoute
+  '/tahfidz': typeof TahfidzRoute
+  '/umroh': typeof UmrohRoute
+  '/warehouse': typeof WarehouseRoute
+  '/yayasan': typeof YayasanRoute
+  '/$industry/landing': typeof IndustryLandingRoute
   '/login/$industryId': typeof LoginIndustryIdRoute
-  '/manajemen-proyek/landing': typeof ManajemenProyekLandingRoute
-  '/manufacture/landing': typeof ManufactureLandingRoute
-  '/office/landing': typeof OfficeLandingRoute
-  '/restaurant/landing': typeof RestaurantLandingRoute
-  '/school-academic/landing': typeof SchoolAcademicLandingRoute
-  '/school-hr/landing': typeof SchoolHrLandingRoute
-  '/tahfidz/landing': typeof TahfidzLandingRoute
-  '/umroh/landing': typeof UmrohLandingRoute
-  '/warehouse/landing': typeof WarehouseLandingRoute
-  '/yayasan/landing': typeof YayasanLandingRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/apotek': typeof ApotekRouteWithChildren
-  '/clinic': typeof ClinicRouteWithChildren
-  '/manajemen-proyek': typeof ManajemenProyekRouteWithChildren
-  '/manufacture': typeof ManufactureRouteWithChildren
-  '/office': typeof OfficeRouteWithChildren
-  '/restaurant': typeof RestaurantRouteWithChildren
-  '/school-academic': typeof SchoolAcademicRouteWithChildren
-  '/school-hr': typeof SchoolHrRouteWithChildren
-  '/tahfidz': typeof TahfidzRouteWithChildren
-  '/umroh': typeof UmrohRouteWithChildren
-  '/warehouse': typeof WarehouseRouteWithChildren
-  '/yayasan': typeof YayasanRouteWithChildren
-  '/apotek/landing': typeof ApotekLandingRoute
-  '/clinic/landing': typeof ClinicLandingRoute
+  '/apotek': typeof ApotekRoute
+  '/clinic': typeof ClinicRoute
+  '/manajemen-proyek': typeof ManajemenProyekRoute
+  '/manufacture': typeof ManufactureRoute
+  '/office': typeof OfficeRoute
+  '/restaurant': typeof RestaurantRoute
+  '/school-academic': typeof SchoolAcademicRoute
+  '/school-hr': typeof SchoolHrRoute
+  '/tahfidz': typeof TahfidzRoute
+  '/umroh': typeof UmrohRoute
+  '/warehouse': typeof WarehouseRoute
+  '/yayasan': typeof YayasanRoute
+  '/$industry/landing': typeof IndustryLandingRoute
   '/login/$industryId': typeof LoginIndustryIdRoute
-  '/manajemen-proyek/landing': typeof ManajemenProyekLandingRoute
-  '/manufacture/landing': typeof ManufactureLandingRoute
-  '/office/landing': typeof OfficeLandingRoute
-  '/restaurant/landing': typeof RestaurantLandingRoute
-  '/school-academic/landing': typeof SchoolAcademicLandingRoute
-  '/school-hr/landing': typeof SchoolHrLandingRoute
-  '/tahfidz/landing': typeof TahfidzLandingRoute
-  '/umroh/landing': typeof UmrohLandingRoute
-  '/warehouse/landing': typeof WarehouseLandingRoute
-  '/yayasan/landing': typeof YayasanLandingRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/apotek': typeof ApotekRouteWithChildren
-  '/clinic': typeof ClinicRouteWithChildren
-  '/manajemen-proyek': typeof ManajemenProyekRouteWithChildren
-  '/manufacture': typeof ManufactureRouteWithChildren
-  '/office': typeof OfficeRouteWithChildren
-  '/restaurant': typeof RestaurantRouteWithChildren
-  '/school-academic': typeof SchoolAcademicRouteWithChildren
-  '/school-hr': typeof SchoolHrRouteWithChildren
-  '/tahfidz': typeof TahfidzRouteWithChildren
-  '/umroh': typeof UmrohRouteWithChildren
-  '/warehouse': typeof WarehouseRouteWithChildren
-  '/yayasan': typeof YayasanRouteWithChildren
-  '/apotek/landing': typeof ApotekLandingRoute
-  '/clinic/landing': typeof ClinicLandingRoute
+  '/apotek': typeof ApotekRoute
+  '/clinic': typeof ClinicRoute
+  '/manajemen-proyek': typeof ManajemenProyekRoute
+  '/manufacture': typeof ManufactureRoute
+  '/office': typeof OfficeRoute
+  '/restaurant': typeof RestaurantRoute
+  '/school-academic': typeof SchoolAcademicRoute
+  '/school-hr': typeof SchoolHrRoute
+  '/tahfidz': typeof TahfidzRoute
+  '/umroh': typeof UmrohRoute
+  '/warehouse': typeof WarehouseRoute
+  '/yayasan': typeof YayasanRoute
+  '/$industry/landing': typeof IndustryLandingRoute
   '/login/$industryId': typeof LoginIndustryIdRoute
-  '/manajemen-proyek/landing': typeof ManajemenProyekLandingRoute
-  '/manufacture/landing': typeof ManufactureLandingRoute
-  '/office/landing': typeof OfficeLandingRoute
-  '/restaurant/landing': typeof RestaurantLandingRoute
-  '/school-academic/landing': typeof SchoolAcademicLandingRoute
-  '/school-hr/landing': typeof SchoolHrLandingRoute
-  '/tahfidz/landing': typeof TahfidzLandingRoute
-  '/umroh/landing': typeof UmrohLandingRoute
-  '/warehouse/landing': typeof WarehouseLandingRoute
-  '/yayasan/landing': typeof YayasanLandingRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -268,19 +169,8 @@ export interface FileRouteTypes {
     | '/umroh'
     | '/warehouse'
     | '/yayasan'
-    | '/apotek/landing'
-    | '/clinic/landing'
+    | '/$industry/landing'
     | '/login/$industryId'
-    | '/manajemen-proyek/landing'
-    | '/manufacture/landing'
-    | '/office/landing'
-    | '/restaurant/landing'
-    | '/school-academic/landing'
-    | '/school-hr/landing'
-    | '/tahfidz/landing'
-    | '/umroh/landing'
-    | '/warehouse/landing'
-    | '/yayasan/landing'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -296,19 +186,8 @@ export interface FileRouteTypes {
     | '/umroh'
     | '/warehouse'
     | '/yayasan'
-    | '/apotek/landing'
-    | '/clinic/landing'
+    | '/$industry/landing'
     | '/login/$industryId'
-    | '/manajemen-proyek/landing'
-    | '/manufacture/landing'
-    | '/office/landing'
-    | '/restaurant/landing'
-    | '/school-academic/landing'
-    | '/school-hr/landing'
-    | '/tahfidz/landing'
-    | '/umroh/landing'
-    | '/warehouse/landing'
-    | '/yayasan/landing'
   id:
     | '__root__'
     | '/'
@@ -324,35 +203,25 @@ export interface FileRouteTypes {
     | '/umroh'
     | '/warehouse'
     | '/yayasan'
-    | '/apotek/landing'
-    | '/clinic/landing'
+    | '/$industry/landing'
     | '/login/$industryId'
-    | '/manajemen-proyek/landing'
-    | '/manufacture/landing'
-    | '/office/landing'
-    | '/restaurant/landing'
-    | '/school-academic/landing'
-    | '/school-hr/landing'
-    | '/tahfidz/landing'
-    | '/umroh/landing'
-    | '/warehouse/landing'
-    | '/yayasan/landing'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  ApotekRoute: typeof ApotekRouteWithChildren
-  ClinicRoute: typeof ClinicRouteWithChildren
-  ManajemenProyekRoute: typeof ManajemenProyekRouteWithChildren
-  ManufactureRoute: typeof ManufactureRouteWithChildren
-  OfficeRoute: typeof OfficeRouteWithChildren
-  RestaurantRoute: typeof RestaurantRouteWithChildren
-  SchoolAcademicRoute: typeof SchoolAcademicRouteWithChildren
-  SchoolHrRoute: typeof SchoolHrRouteWithChildren
-  TahfidzRoute: typeof TahfidzRouteWithChildren
-  UmrohRoute: typeof UmrohRouteWithChildren
-  WarehouseRoute: typeof WarehouseRouteWithChildren
-  YayasanRoute: typeof YayasanRouteWithChildren
+  ApotekRoute: typeof ApotekRoute
+  ClinicRoute: typeof ClinicRoute
+  ManajemenProyekRoute: typeof ManajemenProyekRoute
+  ManufactureRoute: typeof ManufactureRoute
+  OfficeRoute: typeof OfficeRoute
+  RestaurantRoute: typeof RestaurantRoute
+  SchoolAcademicRoute: typeof SchoolAcademicRoute
+  SchoolHrRoute: typeof SchoolHrRoute
+  TahfidzRoute: typeof TahfidzRoute
+  UmrohRoute: typeof UmrohRoute
+  WarehouseRoute: typeof WarehouseRoute
+  YayasanRoute: typeof YayasanRoute
+  IndustryLandingRoute: typeof IndustryLandingRoute
   LoginIndustryIdRoute: typeof LoginIndustryIdRoute
 }
 
@@ -449,19 +318,12 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof YayasanRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/apotek/landing': {
-      id: '/apotek/landing'
-      path: '/landing'
-      fullPath: '/apotek/landing'
-      preLoaderRoute: typeof ApotekLandingRouteImport
-      parentRoute: typeof ApotekRoute
-    }
-    '/clinic/landing': {
-      id: '/clinic/landing'
-      path: '/landing'
-      fullPath: '/clinic/landing'
-      preLoaderRoute: typeof ClinicLandingRouteImport
-      parentRoute: typeof ClinicRoute
+    '/$industry/landing': {
+      id: '/$industry/landing'
+      path: '/$industry/landing'
+      fullPath: '/$industry/landing'
+      preLoaderRoute: typeof IndustryLandingRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/login/$industryId': {
       id: '/login/$industryId'
@@ -470,230 +332,24 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LoginIndustryIdRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/manajemen-proyek/landing': {
-      id: '/manajemen-proyek/landing'
-      path: '/landing'
-      fullPath: '/manajemen-proyek/landing'
-      preLoaderRoute: typeof ManajemenProyekLandingRouteImport
-      parentRoute: typeof ManajemenProyekRoute
-    }
-    '/manufacture/landing': {
-      id: '/manufacture/landing'
-      path: '/landing'
-      fullPath: '/manufacture/landing'
-      preLoaderRoute: typeof ManufactureLandingRouteImport
-      parentRoute: typeof ManufactureRoute
-    }
-    '/office/landing': {
-      id: '/office/landing'
-      path: '/landing'
-      fullPath: '/office/landing'
-      preLoaderRoute: typeof OfficeLandingRouteImport
-      parentRoute: typeof OfficeRoute
-    }
-    '/restaurant/landing': {
-      id: '/restaurant/landing'
-      path: '/landing'
-      fullPath: '/restaurant/landing'
-      preLoaderRoute: typeof RestaurantLandingRouteImport
-      parentRoute: typeof RestaurantRoute
-    }
-    '/school-academic/landing': {
-      id: '/school-academic/landing'
-      path: '/landing'
-      fullPath: '/school-academic/landing'
-      preLoaderRoute: typeof SchoolAcademicLandingRouteImport
-      parentRoute: typeof SchoolAcademicRoute
-    }
-    '/school-hr/landing': {
-      id: '/school-hr/landing'
-      path: '/landing'
-      fullPath: '/school-hr/landing'
-      preLoaderRoute: typeof SchoolHrLandingRouteImport
-      parentRoute: typeof SchoolHrRoute
-    }
-    '/tahfidz/landing': {
-      id: '/tahfidz/landing'
-      path: '/landing'
-      fullPath: '/tahfidz/landing'
-      preLoaderRoute: typeof TahfidzLandingRouteImport
-      parentRoute: typeof TahfidzRoute
-    }
-    '/umroh/landing': {
-      id: '/umroh/landing'
-      path: '/landing'
-      fullPath: '/umroh/landing'
-      preLoaderRoute: typeof UmrohLandingRouteImport
-      parentRoute: typeof UmrohRoute
-    }
-    '/warehouse/landing': {
-      id: '/warehouse/landing'
-      path: '/landing'
-      fullPath: '/warehouse/landing'
-      preLoaderRoute: typeof WarehouseLandingRouteImport
-      parentRoute: typeof WarehouseRoute
-    }
-    '/yayasan/landing': {
-      id: '/yayasan/landing'
-      path: '/landing'
-      fullPath: '/yayasan/landing'
-      preLoaderRoute: typeof YayasanLandingRouteImport
-      parentRoute: typeof YayasanRoute
-    }
   }
 }
 
-interface ApotekRouteChildren {
-  ApotekLandingRoute: typeof ApotekLandingRoute
-}
-
-const ApotekRouteChildren: ApotekRouteChildren = {
-  ApotekLandingRoute: ApotekLandingRoute,
-}
-
-const ApotekRouteWithChildren =
-  ApotekRoute._addFileChildren(ApotekRouteChildren)
-
-interface ClinicRouteChildren {
-  ClinicLandingRoute: typeof ClinicLandingRoute
-}
-
-const ClinicRouteChildren: ClinicRouteChildren = {
-  ClinicLandingRoute: ClinicLandingRoute,
-}
-
-const ClinicRouteWithChildren =
-  ClinicRoute._addFileChildren(ClinicRouteChildren)
-
-interface ManajemenProyekRouteChildren {
-  ManajemenProyekLandingRoute: typeof ManajemenProyekLandingRoute
-}
-
-const ManajemenProyekRouteChildren: ManajemenProyekRouteChildren = {
-  ManajemenProyekLandingRoute: ManajemenProyekLandingRoute,
-}
-
-const ManajemenProyekRouteWithChildren = ManajemenProyekRoute._addFileChildren(
-  ManajemenProyekRouteChildren,
-)
-
-interface ManufactureRouteChildren {
-  ManufactureLandingRoute: typeof ManufactureLandingRoute
-}
-
-const ManufactureRouteChildren: ManufactureRouteChildren = {
-  ManufactureLandingRoute: ManufactureLandingRoute,
-}
-
-const ManufactureRouteWithChildren = ManufactureRoute._addFileChildren(
-  ManufactureRouteChildren,
-)
-
-interface OfficeRouteChildren {
-  OfficeLandingRoute: typeof OfficeLandingRoute
-}
-
-const OfficeRouteChildren: OfficeRouteChildren = {
-  OfficeLandingRoute: OfficeLandingRoute,
-}
-
-const OfficeRouteWithChildren =
-  OfficeRoute._addFileChildren(OfficeRouteChildren)
-
-interface RestaurantRouteChildren {
-  RestaurantLandingRoute: typeof RestaurantLandingRoute
-}
-
-const RestaurantRouteChildren: RestaurantRouteChildren = {
-  RestaurantLandingRoute: RestaurantLandingRoute,
-}
-
-const RestaurantRouteWithChildren = RestaurantRoute._addFileChildren(
-  RestaurantRouteChildren,
-)
-
-interface SchoolAcademicRouteChildren {
-  SchoolAcademicLandingRoute: typeof SchoolAcademicLandingRoute
-}
-
-const SchoolAcademicRouteChildren: SchoolAcademicRouteChildren = {
-  SchoolAcademicLandingRoute: SchoolAcademicLandingRoute,
-}
-
-const SchoolAcademicRouteWithChildren = SchoolAcademicRoute._addFileChildren(
-  SchoolAcademicRouteChildren,
-)
-
-interface SchoolHrRouteChildren {
-  SchoolHrLandingRoute: typeof SchoolHrLandingRoute
-}
-
-const SchoolHrRouteChildren: SchoolHrRouteChildren = {
-  SchoolHrLandingRoute: SchoolHrLandingRoute,
-}
-
-const SchoolHrRouteWithChildren = SchoolHrRoute._addFileChildren(
-  SchoolHrRouteChildren,
-)
-
-interface TahfidzRouteChildren {
-  TahfidzLandingRoute: typeof TahfidzLandingRoute
-}
-
-const TahfidzRouteChildren: TahfidzRouteChildren = {
-  TahfidzLandingRoute: TahfidzLandingRoute,
-}
-
-const TahfidzRouteWithChildren =
-  TahfidzRoute._addFileChildren(TahfidzRouteChildren)
-
-interface UmrohRouteChildren {
-  UmrohLandingRoute: typeof UmrohLandingRoute
-}
-
-const UmrohRouteChildren: UmrohRouteChildren = {
-  UmrohLandingRoute: UmrohLandingRoute,
-}
-
-const UmrohRouteWithChildren = UmrohRoute._addFileChildren(UmrohRouteChildren)
-
-interface WarehouseRouteChildren {
-  WarehouseLandingRoute: typeof WarehouseLandingRoute
-}
-
-const WarehouseRouteChildren: WarehouseRouteChildren = {
-  WarehouseLandingRoute: WarehouseLandingRoute,
-}
-
-const WarehouseRouteWithChildren = WarehouseRoute._addFileChildren(
-  WarehouseRouteChildren,
-)
-
-interface YayasanRouteChildren {
-  YayasanLandingRoute: typeof YayasanLandingRoute
-}
-
-const YayasanRouteChildren: YayasanRouteChildren = {
-  YayasanLandingRoute: YayasanLandingRoute,
-}
-
-const YayasanRouteWithChildren =
-  YayasanRoute._addFileChildren(YayasanRouteChildren)
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  ApotekRoute: ApotekRouteWithChildren,
-  ClinicRoute: ClinicRouteWithChildren,
-  ManajemenProyekRoute: ManajemenProyekRouteWithChildren,
-  ManufactureRoute: ManufactureRouteWithChildren,
-  OfficeRoute: OfficeRouteWithChildren,
-  RestaurantRoute: RestaurantRouteWithChildren,
-  SchoolAcademicRoute: SchoolAcademicRouteWithChildren,
-  SchoolHrRoute: SchoolHrRouteWithChildren,
-  TahfidzRoute: TahfidzRouteWithChildren,
-  UmrohRoute: UmrohRouteWithChildren,
-  WarehouseRoute: WarehouseRouteWithChildren,
-  YayasanRoute: YayasanRouteWithChildren,
+  ApotekRoute: ApotekRoute,
+  ClinicRoute: ClinicRoute,
+  ManajemenProyekRoute: ManajemenProyekRoute,
+  ManufactureRoute: ManufactureRoute,
+  OfficeRoute: OfficeRoute,
+  RestaurantRoute: RestaurantRoute,
+  SchoolAcademicRoute: SchoolAcademicRoute,
+  SchoolHrRoute: SchoolHrRoute,
+  TahfidzRoute: TahfidzRoute,
+  UmrohRoute: UmrohRoute,
+  WarehouseRoute: WarehouseRoute,
+  YayasanRoute: YayasanRoute,
+  IndustryLandingRoute: IndustryLandingRoute,
   LoginIndustryIdRoute: LoginIndustryIdRoute,
 }
 export const routeTree = rootRouteImport

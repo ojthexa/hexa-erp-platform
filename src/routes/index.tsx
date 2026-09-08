@@ -75,7 +75,8 @@ function Home() {
             return (
               <Link
                 key={ind.id}
-                to={ind.landingRoute}
+                to="/$industry/landing"
+                params={{ industryId: ind.id }}
                 className="group card-elevated card-hover relative overflow-hidden p-6 animate-fade-in"
                 style={{ animationDelay: `${i * 60}ms` }}
               >
