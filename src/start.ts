@@ -17,6 +17,9 @@ const errorMiddleware = createMiddleware().server(async ({ next }) => {
   }
 });
 
-export const startInstance = createStart(() => ({
+const createAppStart = () => ({
   requestMiddleware: [errorMiddleware],
-}));
+});
+
+export const startInstance = createStart(createAppStart);
+
