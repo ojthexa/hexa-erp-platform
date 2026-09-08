@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Bell, ChevronsUpDown, Hexagon, Building2, Sparkles } from "lucide-react";
-import { industries } from "@/lib/industries";
+import { industries, getIndustry } from "@/lib/industries";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";

@@ -109,7 +109,20 @@ export type LandingContent = {
   requirements: LandingItem[];
   menuCards: MenuCard[];
 };
-export type LandingRoute =
+export type AppPageRoute =
+  | "/office"
+  | "/school-hr"
+  | "/school-academic"
+  | "/tahfidz"
+  | "/manufacture"
+  | "/manajemen-proyek"
+  | "/warehouse"
+  | "/restaurant"
+  | "/yayasan"
+  | "/umroh"
+  | "/apotek"
+  | "/clinic";
+export type IndustryLandingRoute =
   | "/office/landing"
   | "/school-hr/landing"
   | "/school-academic/landing"
@@ -128,8 +141,8 @@ export type IndustryConfig = {
   name: string;
   tagline: string;
   description: string;
-  route: string;
-  landingRoute: LandingRoute;
+  route: AppPageRoute;
+  landingRoute: IndustryLandingRoute;
   icon: LucideIcon;
   brandVar: string; // css var name
   gradient: string; // tailwind gradient classes for card accent
