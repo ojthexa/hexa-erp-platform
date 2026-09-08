@@ -1,4 +1,4 @@
-import { createFileRoute, Link, useParams } from "@tanstack/react-router";
+import { createFileRoute, useParams } from "@tanstack/react-router";
 import { notFound } from "@tanstack/react-router";
 import { IndustryLanding } from "@/components/erp/IndustryLanding";
 import { getIndustry, type IndustryId } from "@/lib/industries";
@@ -26,8 +26,16 @@ export const Route = createFileRoute("/$industry/landing")({
 });
 
 function IndustryLandingPage() {
-  const { industryId } = useParams({ from: "/$industry/landing" });
+  const { industryId } = useParams();
+
+  if (!industryId || typeof industryId !== "string") {
+    throw notFound();
+  }
+
   const industry = getIndustry(industryId as IndustryId);
-  if (!industry) throw notFound();
+  if (!industry) {
+    throw notFound();
+  }
+
   return <IndustryLanding industry={industry} />;
 }
