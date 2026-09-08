@@ -70,13 +70,17 @@ function Home() {
         </section>
 
         <section id="industries" className="mt-12 grid grid-cols-1 gap-5 sm:mt-16 md:grid-cols-2 lg:grid-cols-3">
-          {industries.map((ind, i) => {
+          {industries?.map((ind, i) => {
             const Icon = ind.icon;
+            const industryId = ind?.id;
+            if (!industryId) {
+              return null;
+            }
             return (
               <Link
-                key={ind.id}
+                key={industryId}
                 to="/$industry/landing"
-                params={{ industryId: ind.id }}
+                params={{ industryId: industryId }}
                 className="group card-elevated card-hover relative overflow-hidden p-6 animate-fade-in"
                 style={{ animationDelay: `${i * 60}ms` }}
               >
