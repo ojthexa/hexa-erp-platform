@@ -1,5 +1,4 @@
-import { createFileRoute, useParams } from "@tanstack/react-router";
-import { notFound } from "@tanstack/react-router";
+import { createFileRoute, notFound } from "@tanstack/react-router";
 import { IndustryLanding } from "@/components/erp/IndustryLanding";
 import { getIndustry, type IndustryId } from "@/lib/industries";
 import { Hexagon } from "lucide-react";
@@ -27,7 +26,7 @@ export const Route = createFileRoute("/$industry/landing")({
 });
 
 function IndustryLandingPage() {
-  const { industry: industryIdRaw } = useParams<{ industry: string }>();
+  const { industry: industryIdRaw } = Route.useParams();
   const industryId = industryIdRaw as IndustryId;
 
   if (!industryId || typeof industryId !== "string") {
