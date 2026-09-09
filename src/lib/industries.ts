@@ -215,8 +215,8 @@ export const industries: IndustryConfig[] = [
       },
     ],
     landing: {
-      headline: "Satu ruang kerja yang rapi untuk HR, penggajian, dan operasional.",
-      intro: "Jaga data karyawan, absensi, aset, dan administrasi tetap sinkron.",
+      headline: "Sistem ERP Terintegrasi untuk Kantor Modern",
+      intro: "HEXA ERP Office hadir sebagai solusi all-in-one yang mengintegrasikan HR, payroll, absensi, inventori, dan administrasi dalam satu platform. Dirancang khusus untuk kebutuhan kantor modern, sistem ini membantu perusahaan mengelola seluruh aspek kepegawaian dan operasional secara efisien. Dengan fitur lengkap mulai dari rekrutmen hingga penggajian otomatis, HEXA ERP Office menjadi mitra terpercaya untuk mengembangkan bisnis Anda.",
       features: [
         {
           title: "Catatan HR",
@@ -361,8 +361,8 @@ export const industries: IndustryConfig[] = [
       },
     ],
     landing: {
-      headline: "Kelola karyawan sekolah tanpa ribet administrasi.",
-      intro: "Guru, staf, absensi, pengganti guru, cuti, dan payroll dalam satu sistem.",
+      headline: "Sistem ERP Manajemen Karyawan Sekolah Terintegrasi",
+      intro: "HEXA ERP School HR dirancang khusus untuk manajemen sumber daya manusia di lingkungan pendidikan. Sistem ini mengintegrasikan data guru, staf, absensi, cuti, penggajian, guru pengganti, hingga rekrutmen dalam satu platform. Dengan fitur lengkap dan user-friendly, HEXA ERP School HR membantu sekolah Anda mengelola karyawan dengan lebih efisien, transparan, dan profesional.",
       features: [
         {
           title: "Data guru & staf",
@@ -507,8 +507,8 @@ export const industries: IndustryConfig[] = [
       },
     ],
     landing: {
-      headline: "Jalankan seluruh operasional akademik dari satu ruang kerja.",
-      intro: "Siswa, kelas, jadwal, ujian, nilai, dan rapor tanpa berpindah aplikasi.",
+      headline: "Sistem Informasi Akademik Modern untuk Sekolah & Madrasah",
+      intro: "HEXA ERP Academic menghadirkan solusi terpadu untuk pengelolaan operasional akademik sekolah. Dari data siswa, manajemen kelas, penjadwalan pelajaran, ujian, penilaian, hingga generate rapor otomatis - semua tersedia dalam satu platform. Didukung fitur pembayaran SPP online dan arsip dokumen digital, HEXA ERP Academic menjadi mitra terpercaya untuk transformasi digital pendidikan Anda.",
       features: [
         {
           title: "Data siswa",
@@ -659,8 +659,8 @@ export const industries: IndustryConfig[] = [
       },
     ],
     landing: {
-      headline: "Kelola tahfidz dengan tertib, transparan, dan terukur.",
-      intro: "Data santri, halaqoh, setoran hafalan, murojaah, tilawah, dan ustadz dalam satu sistem.",
+      headline: "Sistem ERP Tahfidz untuk Manajemen Hafalan Al-Qur'an",
+      intro: "HEXA ERP Tahfidz hadir sebagai solusi digital untuk pesantren, madrasah, dan lembaga tahfidz modern. Sistem ini mengelola data santri, halaqoh, setoran hafalan, murojaah, tilawah, hingga sertifikasi khatam dalam satu platform terintegrasi. Dengan dashboard progress real-time dan laporan berkala, HEXA ERP Tahfidz membantu ustadz dan administrator memantau perkembangan hafalan santri secara efektif.",
       features: [
         {
           title: "Data santri",
@@ -817,8 +817,8 @@ export const industries: IndustryConfig[] = [
       },
     ],
     landing: {
-      headline: "Kelola titik produksi, mesin, kualitas, dan bahan baku dalam satu sistem.",
-      intro: "Work order, BOM, mesin, perawatan, QC, dan logistik pabrik dalam satu ruang kerja.",
+      headline: "Sistem ERP Manufaktur Canggih untuk Produksi & Pabrik",
+      intro: "HEXA ERP Manufacture dirancang khusus untuk kebutuhan manufaktur dan industri pabrik. Sistem ini mengintegrasikan perencanaan produksi, Bill of Materials (BOM), work order, monitoring mesin, quality control, maintenance, hingga manajemen bahan baku dan logistik. Dengan fitur predictive maintenance dan real-time production tracking, HEXA ERP Manufacture membantu pabrik Anda meningkatkan efisiensi produksi dan mengurangi downtime.",
       features: [
         {
           title: "Manajemen produksi",
@@ -963,8 +963,8 @@ export const industries: IndustryConfig[] = [
       },
     ],
     landing: {
-      headline: "Kelola proyek, tim, timeline, dan anggaran dengan lebih terstruktur.",
-      intro: "Papan Kanban, milestone, tugas, Gantt, dan time tracking dalam satu ruang kerja.",
+      headline: "Sistem ERP Manajemen Proyek All-in-One untuk Tim Efektif",
+      intro: "HEXA ERP Project Management menghadirkan solusi komprehensif untuk mengelola proyek dari perencanaan hingga penyelesaian. Dengan fitur papan Kanban interaktif, Gantt Chart, milestone tracking, time tracking, dan manajemen anggaran terintegrasi - semua dalam satu platform. Cocok untuk tim konstruksi, IT, konsultan, maupun agency yang membutuhkan tool manajemen proyek yang powerful dan user-friendly.",
       features: [
         {
           title: "Papan Kanban",
@@ -1116,8 +1116,8 @@ export const industries: IndustryConfig[] = [
       },
     ],
     landing: {
-      headline: "Setiap barang, setiap pergerakan, sepenuhnya terlihat.",
-      intro: "Inventaris, pembelian, dan logistik dalam skala gudang.",
+      headline: "Sistem ERP Warehouse Modern untuk Manajemen Stok & Logistik",
+      intro: "HEXA ERP Warehouse hadir sebagai solusi terpadu untuk pengelolaan gudang dan logistik modern. Sistem ini mengintegrasikan kontrol inventori real-time, pergerakan stok antar lokasi, purchase order, penerimaan barang, pengiriman, hingga manajemen supplier. Dengan fitur stock opname digital, barcode scanning, dan analitik nilai stok, HEXA ERP Warehouse membantu meningkatkan akurasi inventori dan mengoptimalkan supply chain bisnis Anda.",
       features: [
         {
           title: "Kontrol inventaris",
@@ -1272,8 +1272,8 @@ export const industries: IndustryConfig[] = [
       },
     ],
     landing: {
-      headline: "Dari pesanan hingga keuntungan, dalam satu sistem.",
-      intro: "Alat POS, dapur, pasokan, dan pertumbuhan untuk satu outlet maupun jaringan.",
+      headline: "Sistem ERP Restoran Terintegrasi untuk Bisnis F&B Modern",
+      intro: "HEXA ERP Restaurant dirancang khusus untuk bisnis makanan dan minuman - dari restoran, cafe, hingga chain F&B. Sistem ini mengintegrasikan POS kasir, manajemen dapur, inventori bahan baku, pembelian supplier, promosi, hingga laporan keuangan. Dengan fitur lengkap seperti kitchen display system, menu digital, dan analitik penjualan real-time, HEXA ERP Restaurant membantu Anda mengoptimalkan operasional dan meningkatkan profitabilitas bisnis.",
       features: [
         {
           title: "POS & pesanan",
@@ -1425,8 +1425,8 @@ export const industries: IndustryConfig[] = [
       },
     ],
     landing: {
-      headline: "Kelola yayasan dengan transparan, terpercaya, dan berdampak.",
-      intro: "Donasi, program sosial, relawan, unit usaha, dan pelaporan dalam satu sistem.",
+      headline: "Sistem ERP Yayasan Modern untuk Transparansi & Dampak",
+      intro: "HEXA ERP Yayasan dirancang khusus untuk mengelola organisasi nirlaba dan yayasan. Sistem ini mengintegrasikan manajemen donasi, program sosial, relawan, unit usaha, hingga pelaporan keuangan yang transparan. Dengan fitur lengkap mulai dari tracking donatur, pengelolaan zakat & infaq, kampanye, hingga laporan dampak program - HEXA ERP Yayasan membantu Anda membangun kepercayaan stakeholders dan meningkatkan efektivitas program sosial.",
       features: [
         {
           title: "Program sosial",
@@ -1584,8 +1584,8 @@ export const industries: IndustryConfig[] = [
       },
     ],
     landing: {
-      headline: "Kelola paket umroh dari pendaftaran hingga keberangkatan.",
-      intro: "Jamaah, booking, visa, penerbangan, hotel, transportasi, dan komisi dalam satu sistem.",
+      headline: "Sistem ERP Perjalanan Umroh & Haji Terintegrasi",
+      intro: "HEXA ERP Umroh hadir sebagai solusi all-in-one untuk biro perjalanan umroh dan haji. Dari pendaftaran jamaah, pengelolaan paket, visa, penerbangan, hotel, transportasi, hingga perhitungan komisi agen - semua dikelola dalam satu platform. Dengan fitur itinerari digital, manajemen tour leader, dan laporan keuangan terintegrasi, HEXA ERP Umroh membantu agent travel Anda memberikan pelayanan terbaik kepada jamaah.",
       features: [
         {
           title: "Manajemen jamaah",
@@ -1739,8 +1739,8 @@ export const industries: IndustryConfig[] = [
       },
     ],
     landing: {
-      headline: "POS apotek, stok obat, dan laporan dalam satu sistem.",
-      intro: "Manajemen obat, kadaluarsa, resep, supplier, dan penjualan apotek dalam satu ruang kerja.",
+      headline: "Sistem ERP Apotek All-in-One untuk Farmasi Modern",
+      intro: "HEXA ERP Apotek dirancang khusus untuk kebutuhan apotek dan farmasi modern. Sistem ini mengintegrasikan POS kasir, manajemen stok obat, kontrol kadaluarsa, pengolahan resep dokter, pembelian dari supplier, hingga laporan penjualan. Dengan fitur lengkap dan user-friendly, HEXA ERP Apotek membantu apoteker mengelola operasional sehari-hari dengan lebih efisien, akurat, dan profesional.",
       features: [
         {
           title: "POS kasir",
@@ -1892,8 +1892,8 @@ export const industries: IndustryConfig[] = [
       },
     ],
     landing: {
-      headline: "Operasional layanan kesehatan jadi sederhana.",
-      intro: "Pasien, janji temu, apotek, dan penagihan bekerja dalam satu sistem.",
+      headline: "Sistem ERP Klinik Modern untuk Layanan Kesehatan Terpadu",
+      intro: "HEXA ERP Clinic menghadirkan solusi komprehensif untuk pengelolaan klinik modern. Sistem ini mengintegrasikan manajemen pasien, rekam medis elektronik, penjadwalan janji temu, apotek, laboratorium, hingga penagihan dan klaim asuransi dalam satu platform terintegrasi. Dengan antarmuka yang intuitif dan fitur lengkap, HEXA ERP Clinic membantu klinik Anda memberikan pelayanan kesehatan yang lebih baik, efisien, dan profesional.",
       features: [
         {
           title: "Rekam medis pasien",
