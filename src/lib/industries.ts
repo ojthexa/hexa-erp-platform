@@ -99,6 +99,19 @@ import {
   Scale,
 } from "lucide-react";
 
+import { officeLanding as office } from "./landing/content-office.js";
+import { schoolHR } from "./landing/content-school-hr.js";
+import { schoolAcademic } from "./landing/content-school-academic.js";
+import { tahfidz } from "./landing/content-tahfidz.js";
+import { manufacture } from "./landing/content-manufacture.js";
+import { warehouse } from "./landing/content-warehouse.js";
+import { restaurant } from "./landing/content-restaurant.js";
+import { yayasan } from "./landing/content-yayasan.js";
+import { umroh } from "./landing/content-umroh.js";
+import { apotek } from "./landing/content-apotek.js";
+import { clinic } from "./landing/content-clinic.js";
+import { manajemenProyek } from "./landing/content-manajemen-proyek.js";
+
 export type MenuItem = { label: string; icon: LucideIcon };
 export type MenuGroup = { label: string; items: MenuItem[] };
 

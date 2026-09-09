@@ -1,0 +1,108 @@
+import { Stethoscope, HeartPulse, TrendingUp, AlertTriangle, ClipboardCheck, CalendarDays } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import type { LandingContent } from "../industries";
+
+export const clinic: LandingContent = {
+  headline: "Sistem ERP Klinik Modern untuk Pengelolaan Praktik Medis Terpadu",
+  intro: "HEXA ERP Klinik hadir sebagai solusi komprehensif untuk pengelolaan klinik modern. Sistem ini mengintegrasikan rekam medis elektronik (RME), antrian pasien, jadwal dokter, apotek klinik, hingga laporan keuangan dan analitik. Dengan fitur telemedicine dan integrasi dengan BPJS Kesehatan, HEXA ERP Klinik membantu tenaga medis mengelola pasien dengan lebih efektif dan efisien.",
+  features: [
+    {
+      title: "Rekam medis elektronik",
+      description: "Riwayat pasien, diagnosis, resep, dan lab result terdigitalisasi.",
+      icon: ClipboardCheck as LucideIcon,
+    },
+    {
+      title: "Antrian pasien",
+      description: "Sistem antrian digital dengan notifikasi real-time ke pasien.",
+      icon: CalendarDays as LucideIcon,
+    },
+    {
+      title: "Jadwal dokter",
+      description: "Manajemen jadwal praktik dokter dan booking online.",
+      icon: CalendarDays as LucideIcon,
+    },
+    {
+      title: "Apotek klinik",
+      description: "Stok obat, dispensing, dan interaksi obat otomatis.",
+      icon: Stethoscope as LucideIcon,
+    },
+    {
+      title: "Laboratorium",
+      description: "Pemeriksaan lab, hasil laboratorium, dan referensi nilai.",
+      icon: HeartPulse as LucideIcon,
+    },
+    {
+      title: "Laporan & analisis",
+      description: "Dashboard kunjungan, revenue, dan metrik klinis.",
+      icon: TrendingUp as LucideIcon,
+    },
+  ],
+  requirements: [
+    {
+      title: "Profil dokter",
+      description: "Spesialisasi, jadwal praktik, dan room nomor.",
+      icon: Stethoscope as LucideIcon,
+    },
+    {
+      title: "Master diagnosa",
+      description: "Kode ICD-10 dan procedural untuk pencatatan medis.",
+      icon: ClipboardCheck as LucideIcon,
+    },
+    {
+      title: "Stok obat klinik",
+      description: "Master obat, harga, dan alert kedaluwarsa.",
+      icon: AlertTriangle as LucideIcon,
+    },
+    {
+      title: "Integrasi BPJS",
+      description: "Sinkronisasi data dengan sistem BPJS Kesehatan.",
+      icon: ClipboardCheck as LucideIcon,
+    },
+  ],
+  menuCards: [
+    {
+      title: "KPI Klinik",
+      description: "Monitor kunjungan, revenue, rata-rata tunggu, dan kepuasan.",
+      icon: TrendingUp as LucideIcon,
+      items: [
+        { label: "Kunjungan Hari Ini", icon: CalendarDays as LucideIcon },
+        { label: "Revenue Bulan Ini", icon: TrendingUp as LucideIcon },
+        { label: "Dokter Aktif", icon: Stethoscope as LucideIcon },
+        { label: "Rata-rata Tunggu", icon: AlertTriangle as LucideIcon },
+      ],
+    },
+    {
+      title: "Pasien & Antrian",
+      description: "Registrasi, antrian, rekam medis, dan hasil lab.",
+      icon: ClipboardCheck as LucideIcon,
+      items: [
+        { label: "Registrasi Pasien", icon: ClipboardCheck as LucideIcon },
+        { label: "Antrian Saat Ini", icon: CalendarDays as LucideIcon },
+        { label: "Rekam Medis", icon: ClipboardCheck as LucideIcon },
+        { label: "Hasil Lab", icon: HeartPulse as LucideIcon },
+      ],
+    },
+    {
+      title: "Dokter & Jadwal",
+      description: "Kelola dokter, jadwal praktik, dan booking online.",
+      icon: Stethoscope as LucideIcon,
+      items: [
+        { label: "Daftar Dokter", icon: Stethoscope as LucideIcon },
+        { label: "Jadwal Praktik", icon: CalendarDays as LucideIcon },
+        { label: "Booking Online", icon: CalendarDays as LucideIcon },
+        { label: "Spesialisasi", icon: HeartPulse as LucideIcon },
+      ],
+    },
+    {
+      title: "Keuangan & Farmasi",
+      description: "Billing, pembayaran, stok obat, dan laporan klinik.",
+      icon: TrendingUp as LucideIcon,
+      items: [
+        { label: "Billing & Pembayaran", icon: CalendarDays as LucideIcon },
+        { label: "Apotek Klinik", icon: Stethoscope as LucideIcon },
+        { label: "Stok Obat", icon: AlertTriangle as LucideIcon },
+        { label: "Laporan Keuangan", icon: TrendingUp as LucideIcon },
+      ],
+    },
+  ],
+};
