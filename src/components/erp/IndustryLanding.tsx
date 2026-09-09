@@ -211,7 +211,7 @@ export function IndustryLanding({ industry }: { industry: IndustryConfig }) {
                 className="card-elevated card-hover p-5 animate-fade-in"
                 style={{ animationDelay: `${i * 50}ms` }}
               >
-                <Link to="/$industry/menu/$menu" params={{ industry: industry.id, menu: encodeURIComponent(card.title) }} className="block">
+                <Link to="/$industry/landing" params={{ industry: industry.id }} className="block">
                   <div className="flex items-start justify-between gap-3">
                     <div className="min-w-0 flex-1">
                       <h3 className="text-sm font-semibold">{card.title}</h3>
