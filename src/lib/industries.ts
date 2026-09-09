@@ -90,7 +90,7 @@ export type IndustryId =
   | "manufacture"
   | "clinic"
   | "warehouse"
-  | "project"
+  | "manajemen-proyek"
   | "yayasan"
   | "umroh"
   | "apotek";
@@ -900,7 +900,7 @@ export const industries: IndustryConfig[] = [
     },
   },
   {
-    id: "project",
+    id: "manajemen-proyek",
     name: "ERP Manajemen Proyek",
     tagline: "Proyek & Kolaborasi",
     description:

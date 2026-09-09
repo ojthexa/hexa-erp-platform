@@ -16,7 +16,7 @@ export const Route = createFileRoute("/manajemen-proyek")({
 });
 
 function ProjectPage() {
-  const industry = getIndustry("project");
+  const industry = getIndustry("manajemen-proyek");
   return (
     <ErpLayout industry={industry} title="Manajemen Proyek" subtitle="Kanban, milestone, time tracking dan anggaran">
       <ProjectDashboard />
