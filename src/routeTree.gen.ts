@@ -24,6 +24,7 @@ import { Route as WarehouseRouteImport } from './routes/warehouse'
 import { Route as YayasanRouteImport } from './routes/yayasan'
 import { Route as IndustryLandingRouteImport } from './routes/$industry/landing'
 import { Route as LoginIndustryIdRouteImport } from './routes/login.$industryId'
+import { Route as IndustryMenuMenuRouteImport } from './routes/$industry/menu.$menu'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -100,6 +101,11 @@ const LoginIndustryIdRoute = LoginIndustryIdRouteImport.update({
   path: '/login/$industryId',
   getParentRoute: () => rootRouteImport,
 } as any)
+const IndustryMenuMenuRoute = IndustryMenuMenuRouteImport.update({
+  id: '/$industry/menu/$menu',
+  path: '/$industry/menu/$menu',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -117,6 +123,7 @@ export interface FileRoutesByFullPath {
   '/yayasan': typeof YayasanRoute
   '/$industry/landing': typeof IndustryLandingRoute
   '/login/$industryId': typeof LoginIndustryIdRoute
+  '/$industry/menu/$menu': typeof IndustryMenuMenuRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -134,6 +141,7 @@ export interface FileRoutesByTo {
   '/yayasan': typeof YayasanRoute
   '/$industry/landing': typeof IndustryLandingRoute
   '/login/$industryId': typeof LoginIndustryIdRoute
+  '/$industry/menu/$menu': typeof IndustryMenuMenuRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -152,6 +160,7 @@ export interface FileRoutesById {
   '/yayasan': typeof YayasanRoute
   '/$industry/landing': typeof IndustryLandingRoute
   '/login/$industryId': typeof LoginIndustryIdRoute
+  '/$industry/menu/$menu': typeof IndustryMenuMenuRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -171,6 +180,7 @@ export interface FileRouteTypes {
     | '/yayasan'
     | '/$industry/landing'
     | '/login/$industryId'
+    | '/$industry/menu/$menu'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -188,6 +198,7 @@ export interface FileRouteTypes {
     | '/yayasan'
     | '/$industry/landing'
     | '/login/$industryId'
+    | '/$industry/menu/$menu'
   id:
     | '__root__'
     | '/'
@@ -205,6 +216,7 @@ export interface FileRouteTypes {
     | '/yayasan'
     | '/$industry/landing'
     | '/login/$industryId'
+    | '/$industry/menu/$menu'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -223,6 +235,7 @@ export interface RootRouteChildren {
   YayasanRoute: typeof YayasanRoute
   IndustryLandingRoute: typeof IndustryLandingRoute
   LoginIndustryIdRoute: typeof LoginIndustryIdRoute
+  IndustryMenuMenuRoute: typeof IndustryMenuMenuRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -332,6 +345,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LoginIndustryIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/$industry/menu/$menu': {
+      id: '/$industry/menu/$menu'
+      path: '/$industry/menu/$menu'
+      fullPath: '/$industry/menu/$menu'
+      preLoaderRoute: typeof IndustryMenuMenuRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -351,6 +371,7 @@ const rootRouteChildren: RootRouteChildren = {
   YayasanRoute: YayasanRoute,
   IndustryLandingRoute: IndustryLandingRoute,
   LoginIndustryIdRoute: LoginIndustryIdRoute,
+  IndustryMenuMenuRoute: IndustryMenuMenuRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

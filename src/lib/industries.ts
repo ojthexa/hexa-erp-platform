@@ -76,6 +76,27 @@ import {
   ClipboardList,
   Stethoscope as StethoscopeIcon,
   type LucideIcon,
+  TrendingUp,
+  BarChart3,
+  DollarSign,
+  UserCircle,
+  CreditCard,
+  CalendarCheck,
+  ArrowUpDown,
+  AlertTriangle,
+  TrendingDown,
+  Activity,
+  UsersRound,
+  Clock,
+  ListTree,
+  CheckCircle2,
+  MapPin,
+  Coffee,
+  LayoutGrid,
+  Calendar,
+  User,
+  FileBarChart,
+  Scale,
 } from "lucide-react";
 
 export type MenuItem = { label: string; icon: LucideIcon };
@@ -1979,3 +2000,390 @@ export const industries: IndustryConfig[] = [
 
 export const getIndustry = (id: IndustryId) =>
   industries.find((i) => i.id === id)!;
+
+export type MenuItemDetail = {
+  label: string;
+  icon: LucideIcon;
+  description?: string;
+};
+
+export type MenuCardDetail = {
+  title: string;
+  description: string;
+  icon: LucideIcon;
+  items: MenuItemDetail[];
+  explanation?: string;
+  features?: Array<{
+    title: string;
+    description: string;
+    icon: LucideIcon;
+  }>;
+};
+
+export function getMenuDetail(
+  industryId: IndustryId,
+  menuTitle: string
+): MenuCardDetail | undefined {
+  const industry = getIndustry(industryId);
+  if (!industry) return undefined;
+
+  const menuCard = industry.landing?.menuCards?.find(
+    (card) => card.title.toLowerCase() === menuTitle.toLowerCase()
+  );
+  if (!menuCard) return undefined;
+
+  // Return menu card with expanded details based on title
+  const menuDetails: Record<string, Partial<MenuCardDetail>> = {
+    "KPI Kantor": {
+      explanation:
+        "Dashboard KPI memberikan ringkasan performa bisnis Anda secara real-time. Pantau metrik kunci seperti pendapatan, pengeluaran, jumlah karyawan, dan produktivitas dalam satu tampilan.",
+      features: [
+        {
+          title: "Ringkasan Keuangan",
+          description:
+            "Pantau pemasukan, pengeluaran, dan laba rugi harian/mingguan/bulanan.",
+          icon: TrendingUp,
+        },
+        {
+          title: "Data Karyawan",
+          description:
+            "Total karyawan aktif, absensi hari ini, dan breakdown departemen.",
+          icon: Users,
+        },
+        {
+          title: "Produktivitas",
+          description:
+            "Target pencapaian tim dan individual dengan visualisasi grafik.",
+          icon: BarChart3,
+        },
+      ],
+    },
+    "Keuangan & Akuntansi": {
+      explanation:
+        "Modul keuangan mencakup pencatatan transaksi, pembukuan otomatis, neraca, laporan laba rugi, dan arus kas sesuai standar akuntansi.",
+      features: [
+        {
+          title: "Pembukuan Otomatis",
+          description:
+            "Setiap transaksi tercatat otomatis dengan jurnal general ledger.",
+          icon: BookOpen,
+        },
+        {
+          title: "Neraca & Laba Rugi",
+          description:
+            "Laporan keuangan lengkap siap cetak sesuai format akuntansi.",
+          icon: FileText,
+        },
+        {
+          title: "Arus Kas",
+          description: "Pantau cash flow masuk dan keluar secara real-time.",
+          icon: DollarSign,
+        },
+      ],
+    },
+    "SDM & Payroll": {
+      explanation:
+        "Kelola data karyawan, penggajian, absensi, cuti, dan benefit dalam satu sistem terintegrasi.",
+      features: [
+        {
+          title: "Data Karyawan",
+          description:
+            "Profil lengkap, struktur organisasi, dan riwayat kepegawaian.",
+          icon: UserCircle,
+        },
+        {
+          title: "Penggajian",
+          description:
+            "Kalkulasi gaji otomatis termasuk tunjangan, pajak, dan potongan.",
+          icon: CreditCard,
+        },
+        {
+          title: "Absensi & Cuti",
+          description: "Sistem kehadiran digital dan pengajuan cuti online.",
+          icon: CalendarCheck,
+        },
+      ],
+    },
+    "Inventori": {
+      explanation:
+        "Kelola stok barang masuk dan keluar, inventori real-time, dan peringatan stok minimum.",
+      features: [
+        {
+          title: "Stok Real-time",
+          description: "Pemantauan inventori secara langsung dari gudang.",
+          icon: Package,
+        },
+        {
+          title: "Barang Masuk & Keluar",
+          description: "Catatan pembelian dan penjualan barang.",
+          icon: ArrowUpDown,
+        },
+        {
+          title: "Peringatan Stok",
+          description: "Notifikasi otomatis saat stok mencapai batas minimum.",
+          icon: AlertTriangle,
+        },
+      ],
+    },
+    "HR Analytics": {
+      explanation:
+        "Analisis mendalam tentang data SDM termasuk turnover rate, produktivitas, dan tren rekrutmen.",
+      features: [
+        {
+          title: "Turnover Analysis",
+          description: "Pantau tingkat kepergian dan kedatangan karyawan.",
+          icon: TrendingDown,
+        },
+        {
+          title: "Productivity Score",
+          description: "Metrik produktivitas per departemen dan individu.",
+          icon: Activity,
+        },
+        {
+          title: "Recruitment Pipeline",
+          description: "Tracking proses rekrutmen dari lamaran hingga onboard.",
+          icon: UsersRound,
+        },
+      ],
+    },
+    "Manajemen Proyek": {
+      explanation:
+        "Kelola proyek dari perencanaan hingga penyelesaian dengan timeline, tugas, dan alokasi sumber daya.",
+      features: [
+        {
+          title: "Kanban Board",
+          description:
+            "Visualisasi task dengan drag-and-drop antar kolom status.",
+          icon: Kanban,
+        },
+        {
+          title: "Timeline & Milestone",
+          description: "Gantt chart untuk tracking进度 proyek.",
+          icon: CalendarDays,
+        },
+        {
+          title: "Time Tracking",
+          description: "Catat waktu kerja per task dan report jam kerja.",
+          icon: Clock,
+        },
+      ],
+    },
+    "Manufacturing": {
+      explanation:
+        "Sistem manufaktur terintegrasi untuk mengelola produksi, BOM, quality control, dan maintenance mesin.",
+      features: [
+        {
+          title: "Bill of Materials",
+          description: "Daftar bahan baku dan komponen setiap produk.",
+          icon: ListTree,
+        },
+        {
+          title: "Production Order",
+          description: "Instruksi produksi dari perencanaan hingga eksekusi.",
+          icon: ClipboardList,
+        },
+        {
+          title: "Quality Control",
+          description: "Inspeksi kualitas produk sebelum packaging.",
+          icon: CheckCircle2,
+        },
+      ],
+    },
+    "Warehouse": {
+      explanation:
+        "Manajemen gudang modern dengan sistem location-based, picking, packing, dan shipping.",
+      features: [
+        {
+          title: "Location Management",
+          description: "Sistem koordinat rak, shelf, dan bin di gudang.",
+          icon: MapPin,
+        },
+        {
+          title: "Picking & Packing",
+          description: "Workflow penerimaan dan pengemasan pesanan.",
+          icon: ShoppingCart,
+        },
+        {
+          title: "Shipping",
+          description: "Integrasi kurir dan tracking pengiriman.",
+          icon: Truck,
+        },
+      ],
+    },
+    "Restaurant": {
+      explanation:
+        "SISINTEGRA Resto - sistem manajemen restoranall-in-one untuk F&B business.",
+      features: [
+        {
+          title: "POS & Order",
+          description: "Point of sale dan pemesanan meja digital.",
+          icon: Coffee,
+        },
+        {
+          title: "Kitchen Display",
+          description: "Layar dapur menerima order secara real-time.",
+          icon: ChefHat,
+        },
+        {
+          title: "Table Management",
+          description: "Peta kursi dan reservasi online.",
+          icon: LayoutGrid,
+        },
+      ],
+    },
+    "Sekolah (HR)": {
+      explanation:
+        "Manajemen data guru, staf, dan karyawan sekolah dengan sistem penggajian terintegrasi.",
+      features: [
+        {
+          title: "Data Guru & Staf",
+          description: "Profil, kualifikasi, dan riwayat pekerjaan.",
+          icon: GraduationCap,
+        },
+        {
+          title: "Jadwal Mengajar",
+          description: "Penjadwalan otomatis dan distribusi kelas.",
+          icon: Calendar,
+        },
+        {
+          title: "Payroll Pendidikan",
+          description: "Gaji honor, tunjangan, dan potongan sekolah.",
+          icon: Wallet,
+        },
+      ],
+    },
+    "Sekolah (Akademik)": {
+      explanation:
+        "Sistem informasi akademik untuk mengelola siswa, kurikulum, nilai, dan rapor digital.",
+      features: [
+        {
+          title: "Data Siswa",
+          description: "Profil siswa, wali, dan riwayat akademik.",
+          icon: User,
+        },
+        {
+          title: "Nilai & Rapor",
+          description: "Input nilai dan generate rapor otomatis.",
+          icon: FileText,
+        },
+        {
+          title: "Kurikulum",
+          description: "Struktur kurikulum dan silabus digital.",
+          icon: BookOpen,
+        },
+      ],
+    },
+    "Tahfidz": {
+      explanation:
+        "Sistem monitoring hafalan Quran untuk santri dan siswa tahfidz dengan target dan evaluasi.",
+      features: [
+        {
+          title: "Target Hafalan",
+          description: "Penetapan target juz dan potongan ayat.",
+          icon: Target,
+        },
+        {
+          title: "Evaluasi Murajaah",
+          description: "Catatan murojaah berkala dan penilaian ustadz.",
+          icon: ClipboardCheck,
+        },
+        {
+          title: "Progress Santri",
+          description: "Dashboard progress hafalan per santri.",
+          icon: TrendingUp,
+        },
+      ],
+    },
+    "Yayasan": {
+      explanation:
+        "Sistem manajemen yayasan pendidikan dan sosial dengan multi-cabang dan pelaporan terpusat.",
+      features: [
+        {
+          title: "Multi-Cabang",
+          description: "Kelola beberapa unit sekolah/lembaga dalam satu sistem.",
+          icon: Building2,
+        },
+        {
+          title: "Pelaporan Terpusat",
+          description: "Laporan keuangan dan akademik dari semua cabang.",
+          icon: FileBarChart,
+        },
+        {
+          title: "Governance",
+          description: "Administrasi yayasan, SK, dan dokumen legal.",
+          icon: Scale,
+        },
+      ],
+    },
+    "Umroh": {
+      explanation:
+        "Manajemen perjalanan umroh dan haji plus dari registrasi jamaah hingga keberangkatan.",
+      features: [
+        {
+          title: "Registrasi Jamaah",
+          description: "Pendaftaran, pembayaran DP/angsuran, dan dokumen.",
+          icon: UsersRound,
+        },
+        {
+          title: "Program Perjalanan",
+          description: "Itinerary, hotel, penerbangan, dan ziarah.",
+          icon: Plane,
+        },
+        {
+          title: "Keuangan Manasik",
+          description: "Invoice, kwitansi, dan laporan keuangan tour.",
+          icon: Receipt,
+        },
+      ],
+    },
+    "Apotek": {
+      explanation:
+        "POS apotek terintegrasi untuk manajemen obat, kadaluarsa, resep, supplier, dan penjualan.",
+      features: [
+        {
+          title: "POS Kasir",
+          description:
+            "Transaksi cepat dengan cek stok otomatis dan diskon.",
+          icon: ShoppingCart,
+        },
+        {
+          title: "Kontrol Kadaluarsa",
+          description: "Peringatan batch kedaluwarsa dan stock opname.",
+          icon: CalendarX2,
+        },
+        {
+          title: "Resep Dokter",
+          description:
+            "Terima, verifikasi, dan fulfillment resep dari dokter.",
+          icon: ClipboardList,
+        },
+      ],
+    },
+    "Klinik": {
+      explanation:
+        "Sistem klinik modern untuk manajemen pasien, dokter, janji temu, rekam medis, dan klaim asuransi.",
+      features: [
+        {
+          title: "Rekam Medis Elektronik",
+          description: "Dokumentasi pasien digital dan riwayat pengobatan.",
+          icon: FileText,
+        },
+        {
+          title: "Janji Temu Online",
+          description: "Booking jadwal dokter melalui website/aplikasi.",
+          icon: CalendarClock,
+        },
+        {
+          title: "Klaim Asuransi",
+          description: "Processing klaim BPJS dan asuransi swasta.",
+          icon: HeartPulse,
+        },
+      ],
+    },
+  };
+
+  return {
+    ...menuCard,
+    ...(menuDetails[menuTitle] || {}),
+  } as MenuCardDetail;
+}
