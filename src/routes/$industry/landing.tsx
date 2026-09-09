@@ -6,7 +6,7 @@ import { Hexagon } from "lucide-react";
 
 export const Route = createFileRoute("/$industry/landing")({
   head: ({ params }) => {
-    const industry = getIndustry(params.industryId as IndustryId);
+    const industry = getIndustry(params.industry as IndustryId);
     if (!industry) throw notFound();
     return {
       meta: [
@@ -27,7 +27,8 @@ export const Route = createFileRoute("/$industry/landing")({
 });
 
 function IndustryLandingPage() {
-  const { industryId } = useParams();
+  const { industry: industryIdRaw } = useParams<{ industry: string }>();
+  const industryId = industryIdRaw as IndustryId;
 
   if (!industryId || typeof industryId !== "string") {
     return IndustryNotFound();

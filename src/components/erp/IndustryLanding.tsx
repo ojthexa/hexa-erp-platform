@@ -44,7 +44,7 @@ export function IndustryLanding({ industry }: { industry: IndustryConfig }) {
               className="rounded-full text-white"
               style={{ backgroundColor: brand }}
             >
-              <Link to={`/login/${industry.id}`}>
+              <Link to={"/login/" + industry.id as any}>
                 Lihat Detail Aplikasi <ArrowRight className="h-4 w-4" />
               </Link>
             </Button>
@@ -86,7 +86,7 @@ export function IndustryLanding({ industry }: { industry: IndustryConfig }) {
                 className="rounded-full text-white hover:brightness-110"
                 style={{ backgroundColor: brand }}
               >
-                <Link to={`/login/${industry.id}`}>
+                <Link to={"/login/" + industry.id as any}>
                   Lihat Detail Aplikasi <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
@@ -211,7 +211,7 @@ export function IndustryLanding({ industry }: { industry: IndustryConfig }) {
                 className="card-elevated card-hover p-5 animate-fade-in"
                 style={{ animationDelay: `${i * 50}ms` }}
               >
-                <Link to={`/menu/${encodeURIComponent(card.title)}`} className="block">
+                <Link to={"/menu/" + encodeURIComponent(card.title) as any} className="block">
                   <div className="flex items-start justify-between gap-3">
                     <div className="min-w-0 flex-1">
                       <h3 className="text-sm font-semibold">{card.title}</h3>
@@ -228,7 +228,7 @@ export function IndustryLanding({ industry }: { industry: IndustryConfig }) {
                     {card.items.slice(0, 3).map((item, idx) => (
                       <Link
                         key={idx}
-                        to={`/login/${industry.id}`}
+                        to={"/login/" + industry.id as any}
                         className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
                       >
                         <item.icon className="h-3.5 w-3.5 shrink-0" style={{ color: brand }} />
@@ -262,7 +262,7 @@ export function IndustryLanding({ industry }: { industry: IndustryConfig }) {
                   className="rounded-full text-white hover:brightness-110"
                   style={{ backgroundColor: brand }}
                 >
-                  <Link to={`/login/${industry.id}`}>
+                  <Link to={"/login/" + industry.id as any}>
                     Lihat Detail Aplikasi <ArrowRight className="h-4 w-4" />
                   </Link>
                 </Button>
