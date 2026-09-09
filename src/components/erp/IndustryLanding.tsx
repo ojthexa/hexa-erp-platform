@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import {
   ArrowLeft,
@@ -14,6 +15,8 @@ import { Button } from "@/components/ui/button";
 export function IndustryLanding({ industry }: { industry: IndustryConfig }) {
   const Icon = industry.icon;
   const brand = `var(${industry.brandVar})`;
+  const [heroFailed, setHeroFailed] = useState(false);
+  const showHero = !heroFailed && !!industry.heroImage;
 
   return (
     <div className="min-h-screen bg-background">
@@ -55,6 +58,18 @@ export function IndustryLanding({ industry }: { industry: IndustryConfig }) {
       <main>
         {/* Hero */}
         <section className="relative overflow-hidden">
+          {showHero && (
+            <div className="absolute inset-0">
+              <img
+                src={industry.heroImage}
+                alt={industry.name}
+                className="h-full w-full object-cover"
+                onError={() => setHeroFailed(true)}
+              />
+              <div className="absolute inset-0 bg-background/70 backdrop-blur-[2px]" />
+              <div className="absolute inset-0 bg-gradient-to-b from-background via-background/60 to-background" />
+            </div>
+          )}
           <div
             className={`pointer-events-none absolute -right-40 -top-40 h-[28rem] w-[28rem] rounded-full bg-gradient-to-br ${industry.gradient} blur-3xl`}
           />

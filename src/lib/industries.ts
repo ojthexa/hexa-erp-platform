@@ -180,6 +180,7 @@ export type IndustryConfig = {
   icon: LucideIcon;
   brandVar: string; // css var name
   gradient: string; // tailwind gradient classes for card accent
+  heroImage: string; // hero banner image path served from /public
   menu: MenuGroup[];
   landing: LandingContent;
 };
@@ -196,6 +197,7 @@ export const industries: IndustryConfig[] = [
     icon: Building2,
     brandVar: "--brand-office",
     gradient: "from-sky-500/15 to-cyan-500/5",
+    heroImage: "/images/industries/office.jpg",
     menu: [
       { label: "Overview", items: [{ label: "Dashboard", icon: LayoutDashboard }] },
       {
@@ -341,6 +343,7 @@ export const industries: IndustryConfig[] = [
     icon: BriefcaseBusiness,
     brandVar: "--brand-school-hr",
     gradient: "from-violet-500/15 to-indigo-500/5",
+    heroImage: "/images/industries/school-hr.jpg",
     menu: [
       { label: "Overview", items: [{ label: "Dashboard", icon: LayoutDashboard }] },
       {
@@ -489,6 +492,7 @@ export const industries: IndustryConfig[] = [
     icon: GraduationCap,
     brandVar: "--brand-school-academic",
     gradient: "from-indigo-500/15 to-blue-500/5",
+    heroImage: "/images/industries/school-academic.jpg",
     menu: [
       { label: "Overview", items: [{ label: "Dashboard", icon: LayoutDashboard }] },
       {
@@ -635,6 +639,7 @@ export const industries: IndustryConfig[] = [
     icon: BookOpen,
     brandVar: "--brand-tahfidz",
     gradient: "from-emerald-500/15 to-teal-500/5",
+    heroImage: "/images/industries/tahfidz.jpg",
     menu: [
       { label: "Overview", items: [{ label: "Dashboard", icon: LayoutDashboard }] },
       {
@@ -786,6 +791,7 @@ export const industries: IndustryConfig[] = [
     icon: FactoryIcon,
     brandVar: "--brand-manufacture",
     gradient: "from-amber-500/15 to-yellow-500/5",
+    heroImage: "/images/industries/manufacture.jpg",
     menu: [
       { label: "Overview", items: [{ label: "Dashboard", icon: LayoutDashboard }] },
       {
@@ -944,6 +950,7 @@ export const industries: IndustryConfig[] = [
     icon: Kanban,
     brandVar: "--brand-project",
     gradient: "from-cyan-500/15 to-blue-500/5",
+    heroImage: "/images/industries/manajemen-proyek.jpg",
     menu: [
       { label: "Ringkasan", items: [{ label: "Dashboard", icon: LayoutDashboard }] },
       {
@@ -1090,6 +1097,7 @@ export const industries: IndustryConfig[] = [
     icon: Warehouse,
     brandVar: "--brand-warehouse",
     gradient: "from-violet-500/15 to-purple-500/5",
+    heroImage: "/images/industries/warehouse.jpg",
     menu: [
       { label: "Overview", items: [{ label: "Dashboard", icon: LayoutDashboard }] },
       {
@@ -1244,6 +1252,7 @@ export const industries: IndustryConfig[] = [
     icon: UtensilsCrossed,
     brandVar: "--brand-restaurant",
     gradient: "from-orange-500/15 to-rose-500/5",
+    heroImage: "/images/industries/restaurant.jpg",
     menu: [
       { label: "Overview", items: [{ label: "Dashboard", icon: LayoutDashboard }] },
       {
@@ -1399,6 +1408,7 @@ export const industries: IndustryConfig[] = [
     icon: Landmark,
     brandVar: "--brand-yayasan",
     gradient: "from-rose-500/15 to-orange-500/5",
+    heroImage: "/images/industries/yayasan.jpg",
     menu: [
       { label: "Ringkasan", items: [{ label: "Dashboard", icon: LayoutDashboard }] },
       {
@@ -1553,6 +1563,7 @@ export const industries: IndustryConfig[] = [
     icon: Plane,
     brandVar: "--brand-umroh",
     gradient: "from-emerald-500/15 to-lime-500/5",
+    heroImage: "/images/industries/umroh.jpg",
     menu: [
       { label: "Ringkasan", items: [{ label: "Dashboard", icon: LayoutDashboard }] },
       {
@@ -1712,6 +1723,7 @@ export const industries: IndustryConfig[] = [
     icon: PillIcon,
     brandVar: "--brand-apotek",
     gradient: "from-cyan-500/15 to-teal-500/5",
+    heroImage: "/images/industries/apotek.jpg",
     menu: [
       { label: "Ringkasan", items: [{ label: "Dashboard", icon: LayoutDashboard }] },
       {
@@ -1867,6 +1879,7 @@ export const industries: IndustryConfig[] = [
     icon: Stethoscope,
     brandVar: "--brand-clinic",
     gradient: "from-teal-500/15 to-emerald-500/5",
+    heroImage: "/images/industries/clinic.jpg",
     menu: [
       { label: "Overview", items: [{ label: "Dashboard", icon: LayoutDashboard }] },
       {
